@@ -6,7 +6,7 @@
     <!-- Backwards compatibility for IE. This display the page in edge mode: the highest mode supported by IE 6 - 11 -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Set the width of the page to the screen-width of the device -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Page title-->
     <title>Explore/Collect</title>
     <!-- Link to our style sheets here -->
@@ -29,24 +29,35 @@
     </head>
 
     <body>
-    <!-- Site-wide Header -->
-    <header class="header">
-    <!-- Main Navigation Button and Logo Area (left side) -->
-      <div class="navBtn headerBtn"> <a href="index.html"><img src="images/logo.png" class="siteLogo" alt="Explore Collect Logo" /></a> <i class="fa fa-ellipsis-v fa-4x" alt="Open Menu"></i> </div>
-    <!-- Profile Image, Level, and Points (right side) -->
-      <div class="profileBtn headerBtn"></div>
-      <a href="index.html" class="h1link">
-      <h1 class="headerTitle"><span class="logoColor1">Explore</span><span class="logoColor2">/</span><span class="logoColor1">Collect</span></h1>
-      </a>
-      <div class="menu">
-        <ul>
+<!-- Site-wide Header -->
+<header class="header"> 
+      <!-- Main Navigation Button and Logo Area-->
+      <div class="menuTop"> <a href="index.html"><img src="images/explore-collect-logo.png" class="siteLogo" alt="Explore Collect Logo" /></a> <i class="fa fa-ellipsis-v fa-4x menuBtn" alt="Open Menu"></i> </div>
+      <h1 id="pageTitle"></h1>
+      <script>
+      document.getElementById('pageTitle').innerHTML = document.title;
+	  </script>
+      <div class="menu"> 
+    <!-- Profile Image, Level, and Points -->
+    <div class="profileArea">
+          <div class="profileBtn"></div>
+          <div class="profileInfo">
+        <p class="username">Username</p>
+        <p>Explorer Points:</p>
+        <p class="explorerPoints">100,000</p>
+      </div>
+        </div>
+    <ul>
           <li><a href="#">Profile</a></li>
           <li><a href="#">Trips</a></li>
           <li><a href="#">Events</a></li>
           <li><a href="#">Settings</a></li>
           <li><a href="#">Help</a></li>
         </ul>
-      </div>
+    <div class="social">
+          <p>Follow us:</p>
+          <i class="fa fa-facebook-square fa-2x"></i> <i class="fa fa-twitter-square fa-2x"></i> </div>
+  </div>
     </header>
 </body>
 </html>
