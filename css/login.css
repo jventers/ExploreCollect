@@ -1,0 +1,60 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/*------------------Browser Compatibility------------------*/
+/* For older browser support of HTML5 elements */
+header, section, footer, aside, nav, main, article, figure {
+	display: block;
+}
+/*------------------HTML and Body------------------*/
+html, body {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	font-family: 'Open Sans', Verdana, sans-serif;
+	font-weight: 400;
+	font-display: optional;
+	font-size: 16px;
+}
+html {
+	overflow-y: auto;
+	height: 100%;
+}
+body {
+	background-image: url("../images/login-background-missoula.jpg");
+	background-size: cover;
+}
+.content {
+	background-color: #000;
+	opacity: 0.5;
+  	filter: alpha(opacity=50); /* For IE8 and earlier */
+	height: 400px;
+	width: 600px;
+	margin-top: -200px;
+	margin-left: -300px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	padding: 0 3rem;
+}
+/*------------------Heading Structure, Pragraphs, and Lists------------------*/
+h1 {
+	text-align: center;
+	color: #000;
+}
+h2, h3, h4, p, ul, li {
+	color: #FFF;
+}
+
+.loginForm {
+	opacity: 1;
+  	filter: alpha(opacity=100); /* For IE8 and earlier */
+}
+
+.loginBtn {
+	background-color: #fff;
+	color: #000;
+}
+

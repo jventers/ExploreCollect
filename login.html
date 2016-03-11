@@ -6,11 +6,11 @@
     <!-- Backwards compatibility for IE. This display the page in edge mode: the highest mode supported by IE 6 - 11 -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Set the width of the page to the screen-width of the device -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Page title-->
-    <title>Explore/Collect</title>
+    <title>Explore/Collect Login</title>
     <!-- Link to styles here -->
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
     <!-- Link to font-awesome -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Link to Open Sans font -->
@@ -26,20 +26,14 @@
     <!-- Description and Keywords-->
     <meta name="description" content="INSERT DESCRIPTION HERE">
   	<meta name="keywords" content="INSERT KEYWORDS HERE">
-    <!-- Load header and footer -->
-	<script>
-		$(function(){
-			$(".header").load("header.html");
-			$(".footer").load("footer.html");   
-		});
-	</script>
 	</head>
 	<body>
-<header class="header"></header>
+
 <main class="container">
       <section class="content">
     <h2>Login</h2>
-    <form action="Login" method="get">
+    
+    <form action="Login" method="get" class="loginForm">
           <div>
         <input type="email" id="emailLogin" placeholder="Email" size="30"/><label id="message1" style="color:red"></label>
       </div>
@@ -50,8 +44,8 @@
         <input type="button" value="Login" class="loginBtn" />
       </div>
         </form>
+    
   </section>
-  <footer class="footer"></footer>
     </main>
 </body>
 </html>

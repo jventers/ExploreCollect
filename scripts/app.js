@@ -3,7 +3,7 @@ var main = function() {
 
     /*-------------Main Menu Animations-------------*/
     var navBool = true;
-    $('.navBtn').click(function() {
+    $('.menuBtn').click(function() {
         // The first time the button is pressed
         if (navBool) {
             //  Push the menu over
@@ -11,7 +11,7 @@ var main = function() {
                 left: "0px"
             }, 250);
             // Push the navBtn over
-            $('.navBtn').animate({
+            $('.menuTop').animate({
                 left: "0px"
             }, 250);
 
@@ -36,7 +36,7 @@ var main = function() {
                 left: "-25rem"
             }, 250);
             // Pull the button back off the screen
-            $('.navBtn').animate({
+            $('.menuTop').animate({
                 left: "-18.75rem"
             }, 250);
             // Rotate ellipsis back to center (counter-clockwise)
