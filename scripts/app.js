@@ -1,4 +1,3 @@
-// JavaScript Document
 var main = function() {
 
     /*-------------Main Menu Animations-------------*/
@@ -54,6 +53,34 @@ var main = function() {
         } // end else
     });
 
+/*-------------Toggle Hide/Show-------------*/ 
+    
+    $(".expandCollapse").click(function () {
+
+    $expandCollapse = $(this);
+    //getting the next element
+    $showHide = $expandCollapse.next();
+    //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
+    $showHide.slideToggle(500);
+
+});
+
+/*-------------Progress Bar-------------*/ 
+$('.progressUpdate').click(function() {
+  var elem = document.getElementById("myBar");   
+  var width = 1;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+      document.getElementById("label").innerHTML = width * 1  + '%';
+    }
+  }
+});
+
 
     /*-------------Login Show Required on Submit-------------*/
     $('.loginBtn').click(function() {
@@ -70,6 +97,8 @@ var main = function() {
             document.getElementById("message2").innerHTML = "";
         }
     });
-};
+    
 
+    
+}; // End Main
 $(document).ready(main);

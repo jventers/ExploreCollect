@@ -18,13 +18,19 @@ html, body {
 	font-display: optional;
 	font-size: 16px;
 }
-html {
+html {	
+/*-------Always Full background image (full-screen and browser)------*/
 	overflow-y: auto;
 	height: 100%;
+	background: url("../images/login-background-missoula.jpg") no-repeat center center fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
 }
 body {
-	background-image: url("../images/login-background-missoula.jpg");
-	background-size: cover;
+	/*background-image: url("../images/login-background-missoula.jpg");
+	background-size: cover;*/
 }
 .content {
 	background-color: #000;
@@ -57,4 +63,34 @@ h2, h3, h4, p, ul, li {
 	background-color: #fff;
 	color: #000;
 }
+
+
+
+.facebook_button {
+    display: inline-block;
+
+    background: #627aac url(facebook_small.png) left no-repeat;
+
+    border-top: 1px solid #29447e;
+    border-right: 1px solid #29447e;
+    border-bottom: 1px solid #1a356e;
+    border-left: none;
+
+    margin-top:5rem;
+
+    height: 22px;
+
+    padding-right: 7px;
+    padding-left: 29px;
+	
+    font-weight: bold;
+    font-size: 11px;
+    color: white;
+    text-decoration: none;
+    line-height: 22px;
+
+    cursor: pointer;
+
+}
+
 

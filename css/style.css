@@ -1,4 +1,6 @@
 @charset "utf-8";
+@import "compass/css3";
+@import url("http://fonts.googleapis.com/css?family=Lato");
 /* CSS Document */
 
 
@@ -167,6 +169,49 @@ section.content {
 	margin: 6.25rem auto 0 auto;
 	height: 100%;
 }
+/*------------------Homepage------------------*/
+.city {
+	width: 100%;
+}
+.expandCollapse div {
+	width: 100%;
+}
+.city .expandCollapse {
+	background-color: #d3d3d3;
+	padding: 2px;
+	cursor: pointer;
+	font-weight: bold;
+}
+.expandCollapse .showHide {
+	display: none;
+	padding : 5px;
+}
+#myProgress {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  background-color: #ddd;
+}
+
+#myBar {
+  position: absolute;
+  width: 0px;
+  height: 100%;
+  background-color: #4CAF50;
+}
+
+#label {
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+/*------------------Individual Location------------------*/
+#googleMap {
+	width:100%;
+	height:450px;
+	position: fixed;
+	z-index: 0;
+}
 /*------------------FontAwesome------------------*/
 .fa {
 	color: #FFF;
@@ -177,3 +222,288 @@ section.content {
 .fa-twitter-square:hover {
 	color: #505050;
 }
+
+/*-----------------Profile Page-------------------*/
+.profileBtnLrg {
+	width: 10rem;
+	height: 10rem;
+	margin: .75rem 0 0 3rem;
+	background-color: #000;
+	float: left;
+}
+.profileAreaLrg {
+	display: inline-block;
+	width: 50rem;
+	height: 15rem;
+}
+.usernameLrg {
+	font-size: 3rem;
+}
+.profileInfo p {
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+.profilebutton {
+   border-top: 1px solid #96d1f8;
+   background: #027b96;
+   background: -webkit-gradient(linear, left top, left bottom, from(#00c6f8), to(#027b96));
+   background: -webkit-linear-gradient(top, #00c6f8, #027b96);
+   background: -moz-linear-gradient(top, #00c6f8, #027b96);
+   background: -ms-linear-gradient(top, #00c6f8, #027b96);
+   background: -o-linear-gradient(top, #00c6f8, #027b96);
+   margin-right: 3rem;
+   margin-left: 1rem;
+   padding: 13.5px 27px;
+   -webkit-border-radius: 14px;
+   -moz-border-radius: 14px;
+   border-radius: 14px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 24px;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.profilebutton a{
+	padding-right: 70px;
+}
+.profilebutton:hover {
+   border-top-color: #f38430;
+   background: #f38430;
+   color: #ccc;
+   }
+.profilebutton:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }
+
+.tabs input[type=radio] {
+          position: absolute;
+          top: -9999px;
+          left: -9999px;
+      }
+      .tabs {
+        width: 650px;
+        float: none;
+        list-style: none;
+        position: relative;
+        padding: 0;
+        margin: 75px auto;
+	z-index:0;
+      }
+      .tabs li{
+        float: left;
+      }
+      .tabs label {
+          display: block;
+          padding: 10px 20px;
+          border-radius: 2px 2px 0 0;
+          color: #00c8f8;
+          font-size: 24px;
+          font-weight: normal;
+          
+          background: rgba(255,255,255,0.2);
+          cursor: pointer;
+          position: relative;
+          top: 3px;
+          -webkit-transition: all 0.2s ease-in-out;
+          -moz-transition: all 0.2s ease-in-out;
+          -o-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
+      }
+      .tabs label:hover {
+        background: #f38630;
+        top: 0;
+      }
+       
+      [id^=tab]:checked + label {
+        background: #00c8f8;
+        color: white;
+        top: 0;
+      }
+       
+      [id^=tab]:checked ~ [id^=tab-content] {
+          display: block;
+      }
+      .tab-content{
+        z-index: 2;
+        display: none;
+        text-align: left;
+        width: 75%;
+        font-size: 20px;
+        line-height: 140%;
+        padding-top: 10px;
+        background: #00c8f8;
+        padding: 15px;
+        color: white;
+        position: absolute;
+        top: 53px;
+        left: 0;
+        box-sizing: border-box;
+        -webkit-animation-duration: 0.5s;
+        -o-animation-duration: 0.5s;
+        -moz-animation-duration: 0.5s;
+        animation-duration: 0.5s;
+      }
+
+.Tripsbutton {
+   border-top: 1px solid #96d1f8;
+   background: #027b96;
+   background: -webkit-gradient(linear, left top, left bottom, from(#00c6f8), to(#027b96));
+   background: -webkit-linear-gradient(top, #00c6f8, #027b96);
+   background: -moz-linear-gradient(top, #00c6f8, #027b96);
+   background: -ms-linear-gradient(top, #00c6f8, #027b96);
+   background: -o-linear-gradient(top, #00c6f8, #027b96);
+   margin-right: 3rem;
+   margin-left: 1rem;
+   margin-top: 5rem;
+   padding: 13.5px 27px;
+   -webkit-border-radius: 14px;
+   -moz-border-radius: 14px;
+   border-radius: 14px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 24px;
+   text-decoration: none;
+   vertical-align: middle;
+   text-align: center;
+   }
+.Tripsbutton:hover {
+   border-top-color: #f38430;
+   background: #f38430;
+   color: #ccc;
+   }
+.Tripsbutton:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }
+.date{
+   text-align: center;
+}
+
+
+
+
+
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.calen_container {
+	height: 25rem;
+	left: 50%;
+	margin: -255px 0 0 -245px;
+	position: absolute;
+	top: 25%;
+	width: 700px;
+}
+
+/* ---------- CALENDAR ---------- */
+
+.calendar {
+	text-align: center;
+}
+
+.calendar header {
+	position: relative;
+}
+
+.calendar h2 {
+	text-transform: uppercase;
+}
+
+.calendar thead {
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.calendar tbody {
+	color: #7c8a95;
+}
+
+.calendar tbody td:hover {
+	border: 2px solid #00addf;
+}
+
+.calendar td {
+	border: 2px solid transparent;
+	border-radius: 50%;
+	display: inline-block;
+	height: 4em;
+	line-height: 4em;
+	text-align: center;
+	width: 4em;
+}
+
+.calendar .prev-month,
+.calendar .next-month {
+	color: #cbd1d2;
+}
+
+.calendar .prev-month:hover,
+.calendar .next-month:hover {
+	border: 2px solid #cbd1d2;
+}
+
+.current-day {
+	background: #00addf;
+	color: #f9f9f9;
+}
+
+.event {
+	cursor: pointer;
+	position: relative;
+}
+
+.event:after {
+	background: #00addf;
+	border-radius: 50%;
+	bottom: .5em;
+	display: block;
+	content: '';
+	height: .5em;
+	left: 50%;
+	margin: -.25em 0 0 -.25em;
+	position: absolute;
+	width: .5em;
+}
+
+.event.current-day:after {
+	background: #f9f9f9;
+}
+
+.btn-prev,
+.btn-next {
+	border: 2px solid #cbd1d2;
+	border-radius: 50%;
+	color: #cbd1d2;
+	height: 2em;
+	font-size: .75em;
+	line-height: 2em;
+	margin: -1em;
+	position: absolute;
+	top: 50%;
+	width: 2em;
+}
+
+.btn-prev:hover,
+.btn-next:hover {
+	background: #cbd1d2;
+	color: #f9f9f9;
+}
+
+.btn-prev {
+	left: 6em;
+}
+
+.btn-next {
+	right: 6em;
+}
+
