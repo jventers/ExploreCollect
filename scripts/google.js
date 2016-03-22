@@ -1,53 +1,73 @@
 // JavaScript Document
-//var main = function() {
 
 /*-------------Find Current Location-------------*/
-
+	
 /*-------------Keep Track of Cities Added (Send to user.js)-------------*/
-
 /*-------------Pull Location Information by Category-------------*/
-
 /*-------------Login with Google-------------*/
-
 /*-------------Individual Location - Google Map-------------*/
-var map;
 function initMap() {
-var latitude = -25.363;
-var longitude = 131.044;
-var myLatLng = {lat: latitude, lng: longitude};
 
-var mapCanvas = document.getElementById("googleMap");
-var mapOptions = {
-    center: myLatLng, 
-	zoom: 12, 
-	//disableDefaultUI: true,
-	draggable: false,
-	mapTypeId: google.maps.MapTypeId.ROADMAP
-};
+    var latitude = 46.876973;
+    var longitude = -114.016406;
+    var destLatLong = {
+        lat: latitude,
+        lng: longitude
+    };
+
+ // Create an array of styles.
+  var styles = [ 
+  { "featureType": "road.arterial", "elementType": "geometry.stroke", "stylers": [ { "color": "#ffffff" }, { "weight": 1.2 }, { "visibility": "simplified" } ] },
+  { "featureType": "landscape", "elementType": "geometry.fill", "stylers": [ { "color": "#505050" } ] },
+  { "featureType": "poi", "elementType": "geometry.fill", "stylers": [ { "color": "#505050" } ] },
+  { "elementType": "labels.text", "stylers": [ { "visibility": "simplified" }, { "color": "#a9cf54" }, { "lightness": 24 } ] },
+  { "featureType": "road.highway", "elementType": "geometry", "stylers": [ { "color": "#f38630" } ] },
+  { "featureType": "road.local", "elementType": "geometry", "stylers": [ { "color": "#aaaaaa" } ] },
+  { "featureType": "water", "stylers": [ { "color": "#00c8f8" } ] } 
+  ];
+
+    var styledMap = new google.maps.StyledMapType(styles, {
+        name: "Styled Map"
+    });
+
+
+    var mapCanvas = document.getElementById("googleMap");
+    var mapOptions = {
+        center: destLatLong,
+        zoom: 12,
+        disableDefaultUI: true,
+        draggable: false,
+        mapTypeId: [google.maps.MapTypeId.ROADMAP, 'map_style']
+    };
+
+    var map = new google.maps.Map(mapCanvas, mapOptions);
+
+    map.mapTypes.set('map_style', styledMap);
+    map.setMapTypeId('map_style');
+
+
+    /* Customize the Map Marker */
+    var image = 'images/map-marker-icon.png';
+    var marker = new google.maps.Marker({
+        position: destLatLong,
+        icon: image,
+        map: map,
+        title: 'Click to begin navigation'
+    });
 
 
 
-/* Customize the Map Marker */ 
-var image =  'images/map-marker-icon.png';
-var marker = new google.maps.Marker({
-    position: myLatLng,
-    icon: image,
-	title: 'Click to begin navigation'
-  });  
- marker.setMap(map);
-map = new google.maps.Map(mapCanvas, mapOptions);
+    // I don't understand what this line does but Google made it sound important
+    google.maps.event.addDomListener(window, 'load', initMap);
 
-// I don't understand what this line does but Google made it sound important
-//google.maps.event.addDomListener(window, 'load', initMap);
 
-/*
-map.addListener('click', function() {
- // Add code here to start navigation when clicked
-});
-*/
+    map.addListener('click', function() {
+        window.location.href = "http://maps.google.com/maps?q=loc:" + latitude + "," + longitude + "&navigate=yes";
+    });
+
 
 } // End initMap
 
-
-//}; // End Main
-$(document).ready(initMap);
+$(document).ready(function() {
+    initMap();
+});

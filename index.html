@@ -19,7 +19,7 @@
     <script src="http://www.google.com/jsapi"></script>
     <!-- Load JQuery -->
     <script>
-        google.load("jquery", "1.4.1");
+		google.load("jquery", "1.4.1");
     </script>
     <!-- Include our scripts -->
     <script src="scripts/app.js"></script>
@@ -28,43 +28,53 @@
     <meta name="description" content="INSERT DESCRIPTION HERE">
     <meta name="keywords" content="INSERT KEYWORDS HERE">
     <!-- Load header-->
-    <script>
-        $(function(){
-            $(".header").load("header.html"); 
-        });
-    </script>
+	<script>
+		$(function(){
+			$(".header").load("header.html"); 
+		});
+	</script>
     </head>
 
     <body>
 <header class="header"></header>
+
 <main class="container">
-      <section class="content">
-      
-      
-    <div class="city">
-       
-       <div class="expandCollapse">
-        <div id="myProgress">
-              <div id="myBar">
-            <h2>Missoula</h2>
-            <p id="label">0%</p>
-          </div>
-            </div>
-      </div>
-          <div class="showHide">
-        <div class="expandCollapse">
-              <h3 class="category">Bars</h3>
-            </div>
-        <div class="showHide">
-              <h4 class="location">The Rhino</h4>
-            </div>
-      
-      </div>
-  
-        </div>
+    <section class="content">
+    
+    
+    
+        <div class="cities">
+            <div class="expandCollapse">
+                <div id="myProgress">
+                    <div id="myBar">
+                        <h2 class="city">Missoula</h2>
+                        <p id="label">0%</p>
+                    </div> <!-- End myBar -->
+            	</div> <!-- End myProgress -->
+        	</div> <!-- End expandCollapse -->
+        	<div class="showHide">
+            	<div class="expandCollapse">
+                    <div id="myProgress">
+                    	<div id="myBar">
+                            <h3 class="category">Bars</h3>
+                            <p id="label">0%</p>
+                        </div> <!-- End myBar -->
+                    </div> <!-- End myProgress -->
+                </div> <!-- End expandCollapse -->
+                <div class="showHide">
+                <h4 class="location"><a href="#">The Rhino</a></h4>
+           		</div> <!-- End expandCollapse -->
+            </div> <!-- End showHide -->
+        </div> <!-- End Cities -->
+        
         
         
     <button class="progressUpdate" >Change Progress</button>
+    
+    <div id="addLocArea">
+    <p id="initialMsg">It doesn't look like you've added any cities to your list yet.</p>
+    <p><a href="#">Add Current Location</a> or <a href="#">Search for a City</a></p>
+    </div>
   
   </section>
     </main>
