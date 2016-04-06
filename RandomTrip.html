@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+    <<head>
+	<!-- DO NOT REMOVE. THIS DEFINES THE CHARACTER SET-->
+    <meta charset="utf-8">
+    <!-- Backwards compatibility for IE. This display the page in edge mode: the highest mode supported by IE 6 - 11 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Set the width of the page to the screen-width of the device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Page title-->
+    <title>Trips</title>
+    <!-- Link to styles here -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Link to font-awesome -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Link to Open Sans font -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:600;400;300" rel="stylesheet" type="text/css">
+    <!-- Load JavaScript -->
+	<script src="http://www.google.com/jsapi"></script>
+    <!-- Load JQuery -->
+	<script>
+		google.load("jquery", "1.4.1");
+    </script>
+      
+    
+    <!-- Include our scripts -->
+	<script src="scripts/app.js"></script>
+   
+    <!-- Description and Keywords-->
+    <meta name="description" content="INSERT DESCRIPTION HERE">
+  	<meta name="keywords" content="INSERT KEYWORDS HERE">
+    <!-- Load header-->
+	<script>
+		$(function(){
+			$(".header").load("header.html"); 
+		});
+//    <!-- Load tabs-->
+//    $(function() {
+//      $("#tabs").tabs();
+//    });
+	</script>
+  <!-- tab header styles-->
+  <style>
+         #tabs{font-size: 20px;}
+         .ui-widget-header {
+            background:#505050;
+            border: 2px solid #505050;
+            color: #000000;
+            font-weight: bold;
+         }
+  </style>
+        <style>
+            #right-panel {
+                font-family: 'Roboto','sans-serif';
+                line-height: 30px;
+                padding-left: 10px;
+            }
+
+            #right-panel select, #right-panel input {
+                font-size: 15px;
+            }
+
+            #right-panel select {
+                width: 100%;
+            }
+
+            #right-panel i {
+                font-size: 12px;
+            }
+            #right-panel {
+                font-family: Arial, Helvetica, sans-serif;
+                position: absolute;
+                right: 5%;
+                top: 80%;
+                margin-top: -195px;
+                height: 330px;
+                width: 400px;
+                padding: 5px;
+                z-index: 5;
+                border: 1px solid #999;
+                background: #fff;
+            }
+            h2 {
+                font-size: 22px;
+                margin: 0 0 5px 0;
+            }
+            ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+                height: 271px;
+                width: 400px;
+                overflow-y: scroll;
+            }
+            li {
+                background-color: #f1f1f1;
+                padding: 10px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+            li:nth-child(odd) {
+                background-color: #fcfcfc;
+            }
+            #more {
+                width: 100%;
+                margin: 5px 0 0 0;
+            }
+        </style>
+	</head>
+    <body>
+    <header class="header"></header>
+<main class="container">
+      <section class="content">  
+      
+        <p class="date" id="date"></p>
+          <script>
+          var d = new Date();
+          document.getElementById("date").innerHTML = d.toDateString();
+          </script>
+
+        <!-- Tabbed space for History and captures-->
+        <div class="Tripsbutton">Create a Trip</div>
+        <div class="Tripsbutton">Generate Random Trip</div>
+        <div class="Tripsbutton">Trip History</div>
+          <div id="map"></div>
+          <div id="right-panel">
+              <h2>Results</h2>
+              <ul id="places"></ul>
+              <button id="more">More results</button>
+            </div>
+
+
+      </section>
+
+
+
+       </main>
+
+</body>
+<script src="scripts/nearbySearch.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaWY5QH4ObetGu6TxKARoUpxWggHtJoiE&libraries=places&callback=initMap" async></script>
+
+</html>
