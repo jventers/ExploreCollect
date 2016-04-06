@@ -26,6 +26,7 @@
 	<!-- Include our scripts -->
 	<script src="scripts/app.js"></script>
     <script src="scripts/google.js"></script>
+    <script src="scripts/location.js"></script>
 	<!-- Description and Keywords-->
 	<meta name="description" content="INSERT DESCRIPTION HERE">
 	<meta name="keywords" content="INSERT KEYWORDS HERE">
@@ -43,8 +44,39 @@
         <main class="container"> 
             <!-- Insert main content here -->
             <section class="content">
-                <div id="googleMap">Click here to begin navigation</div>
-               
+            <a href="#" id="backBtn" <i class="fa fa-caret-left fa-lg"></i>  Back</a>
+               <p class="mapText">Select the map to begin navigation</p>
+               <div id="googleMap"></div>
+               <div id="ratingsAndButtons">
+                   <form id="ratingHands">
+					<input type="radio" name="rating" id="like" value="like"><label for="like"><span class="thumbsUp"></span>1200</label>
+                    <input type="radio" name="rating" id="dislike" value="dislike"><label for="dislike"><span  class="thumbsDown"></span>100</label>
+                   </form>
+                   <div id="addButtons">
+					<a href="#" class="btn">Add Event</a>
+					<a href="#" class="btn">Add to Trip</a>
+                   </div>
+               </div>
+               <div class="sliderNav">
+               <i class="fa fa-chevron-left fa-2x prevPic"></i>
+               <i class="fa fa-chevron-right fa-2x nextPic"></i>
+               </div>
+               <div id="slideshow">
+                   <ul id="allPics">
+                       <li class="pictureFrame">
+                           <img src="images/camera-icon.png">
+                       </li>
+                       <li class="pictureFrame">
+                           <img src="images/camera-icon.png">
+                       </li>
+                       <li class="pictureFrame">
+                           <img src="images/camera-icon.png">
+                       </li>
+                       <li class="pictureFrame">
+                           <img src="images/camera-icon.png">
+                       </li>
+                   </ul>
+               </div>
             </section>
         </main>
     </body>

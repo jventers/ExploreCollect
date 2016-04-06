@@ -20,6 +20,7 @@ function initMap() {
   { "featureType": "road.arterial", "elementType": "geometry.stroke", "stylers": [ { "color": "#ffffff" }, { "weight": 1.2 }, { "visibility": "simplified" } ] },
   { "featureType": "landscape", "elementType": "geometry.fill", "stylers": [ { "color": "#505050" } ] },
   { "featureType": "poi", "elementType": "geometry.fill", "stylers": [ { "color": "#505050" } ] },
+  { "featureType": "administrative", "elementType": "geometry.fill", "stylers": [ { "color": "#505050" } ] },
   { "elementType": "labels.text", "stylers": [ { "visibility": "simplified" }, { "color": "#a9cf54" }, { "lightness": 24 } ] },
   { "featureType": "road.highway", "elementType": "geometry", "stylers": [ { "color": "#f38630" } ] },
   { "featureType": "road.local", "elementType": "geometry", "stylers": [ { "color": "#aaaaaa" } ] },
