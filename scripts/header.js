@@ -26,6 +26,10 @@ var main = function() {
                 },
                 duration: 250
             }, 'linear');
+			//  Add drop shadow
+			$('.menu').css('-webkit-box-shadow', '10rem 0px 20rem 0px rgba(0,0,0,0.56)');
+			$('.menu').css('-moz-box-shadow', '10rem 0px 20rem 0px rgba(0,0,0,0.56)');
+			$('.menu').css('box-shadow', '10rem 0px 20rem 0px rgba(0,0,0,0.56)');
             navBool = false;
         } // end if
 
@@ -33,11 +37,11 @@ var main = function() {
         else {
             // Pull the menu back off the screen
             $('.menu').animate({
-                left: "-25rem"
+                left: "-30rem"
             }, 250);
             // Pull the button back off the screen
             $('.menuTop').animate({
-                left: "-18.75rem"
+                left: "-26rem"
             }, 250);
             // Rotate ellipsis back to center (counter-clockwise)
             $('.fa-ellipsis-v').animate({
@@ -50,6 +54,10 @@ var main = function() {
                 },
                 duration: 250
             }, 'linear');
+			//  Remove drop shadow
+			$('.menu').css('-webkit-box-shadow', '0px 0px 0px 0px rgba(0,0,0,0)');
+            $('.menu').css('-moz-box-shadow', '0px 0px 0px 0px rgba(0,0,0,0)');
+            $('.menu').css('box-shadow', '0px 0px 0px 0px rgba(0,0,0,0)');
             navBool = true;
         } // end else
     });
