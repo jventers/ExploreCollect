@@ -6,27 +6,29 @@
 var map;
 var searchResults;
 
-function initMap() {
-    var pyrmont = {lat: -33.866, lng: 151.196};
+function initMap(lat,lng,searchParam) {
+    console.log(lat,lng);
+    var myLocation = {lat: -33.866, lng: 151.196};
 
      map = new google.maps.Map(document.createElement('div'))
 
     var service = new google.maps.places.PlacesService(map);
     service.nearbySearch({
-        location: pyrmont,
+        location: myLocation,
         radius: 500,
-        type: ['store']
+        type: [searchParam]
     }, processResults);
     //var places = new google.maps.places.PlacesService(document.getElementById('map'));
     //var destinations = new google.maps.places.PlacesService(map);
     //console.log(places);
+   // return 'testing: ' + searchResults[0].name;
 }
 
 function processResults(results, status, pagination) {
     if (status !== google.maps.places.PlacesServiceStatus.OK) {
         return;
     } else {
-        createMarkers(results);
+
         searchResults = results;
         console.log(searchResults);
 
@@ -40,21 +42,20 @@ function processResults(results, status, pagination) {
                 pagination.nextPage();
             });
         }
+            var placesList = document.getElementById('places');
+
+            for (var i = 0, place; place = results[i]; i++) {
+
+                placesList.innerHTML += '<li>' + place.name + '</li>';
+
+            }
+        var test = document.getElementById('demo').innerHTML='testing: ' + searchResults[0].name;
     }
 }
 
-function createMarkers(places) {
-
-    var placesList = document.getElementById('places');
-
-    for (var i = 0, place; place = places[i]; i++) {
-
-        placesList.innerHTML += '<li>' + place.name + '</li>';
-
-    }
-
+function getResults(){
+    return searchResults;
 }
-
 //<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaWY5QH4ObetGu6TxKARoUpxWggHtJoiE&libraries=places&callback=initMap" async
 /**
  * Created by Alex on 4/6/2016.
