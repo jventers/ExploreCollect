@@ -12,7 +12,7 @@ $('.nextPic').click(function() {
 		currentSlide++;
 		if(currentSlide === $pic.length){
 			currentSlide = 1;
-			$allPics.css('margin-left', 0);
+			$allPics.animate({'margin-left': '0px'}, animationSpeed);
 		} // End if
 	}); // End allPics.animate
 }); // End nextPic.click
