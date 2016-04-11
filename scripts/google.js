@@ -1,19 +1,18 @@
 // JavaScript Document
 
-/*-------------Find Current Location-------------*/
-	
+
 /*-------------Keep Track of Cities Added (Send to user.js)-------------*/
 /*-------------Pull Location Information by Category-------------*/
 /*-------------Login with Google-------------*/
 /*-------------Individual Location - Google Map-------------*/
-function initMap() {
+	function initMap() {
 
-    var latitude = 46.876973;
-    var longitude = -114.016406;
-    var destLatLong = {
-        lat: latitude,
-        lng: longitude
-    };
+		var latitude = 46.876973;
+		var longitude = -114.016406;
+		var destLatLong = {
+			lat: latitude,
+			lng: longitude
+	};
 
  // Create an array of styles.
   var styles = [ 

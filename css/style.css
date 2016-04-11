@@ -57,7 +57,7 @@ header {
 	height: 4rem;
 	width: 4rem;
 	float: left;
-	margin-left: 2rem;
+	margin-left: 3rem;
 }
 .menuTop {
 	border: none;
@@ -95,19 +95,19 @@ menuBtn {
 .profileArea {
 	display: inline-block;
 	width: 30rem;
-	height: 7rem;
+	height: 6rem;
 }
 .profileBtn {
 	width: 5.5rem;
 	height: 5.5rem;
-	margin: .75rem 0 0 3rem;
+	margin-left: 3rem;
 	background-color: #000;
 	float: left;
 }
 .profileInfo {
 	width: 16.5rem;
 	height: 5.5rem;
-	margin: .75rem 0;
+	margin: 0px;
 	float: left;
 	text-align: center;
 }
@@ -115,8 +115,10 @@ menuBtn {
 	margin-top: 0px;
 	margin-bottom: 5px;
 }
-.username {
-	font-size: 1.5rem;
+
+h2.username {
+	padding: 0px;
+	margin: 0px;
 }
 .menu ul {
 	list-style: none;
@@ -137,6 +139,10 @@ menuBtn {
 	font-weight: 600;
 	text-decoration: none;
 	text-transform: uppercase;
+}
+.menu a:hover {
+	text-decoration: none;
+	
 }
 .social {
 	text-align: center;
@@ -167,6 +173,7 @@ h2, h3, h4, p, ul, li {
 a {
 	color: #00c8f8;
 	text-decoration: none;
+	cursor: pointer;
 }
 a:hover {
 	text-decoration: underline;
@@ -355,16 +362,21 @@ div.expandCollapse {
 	text-align: center;
 }
 /*------------------Individual Location------------------*/
-.mapText {
+.mapTextContainer {
 	background-color: #fff;
 	opacity: .5;
-	color: #000;
 	text-align:right;
 	width: 100%;
 	position: relative;
-	top: 392px;
+	top: 362px;
 	left: 2px;
 	z-index: 10;
+	height: 2rem;
+}
+.mapText {
+	color: #000;
+	padding-right: 20px;
+	opacity: 1;
 }
 #googleMap {
 	width:100%;
@@ -406,8 +418,7 @@ div.expandCollapse {
 }
 #slideshow {
 	width: 100%;
-	overflow-y: hidden;
-	overflow-x: scroll;
+	overflow: hidden;
 	height: 260px;
 }
 .sliderNav {
@@ -480,129 +491,85 @@ div.expandCollapse {
 }
 
 /*-----------------Profile Page-------------------*/
-.profileBtnLrg {
-	width: 10rem;
-	height: 10rem;
+.topProfileArea {
+	display: inline-block;	
+	width: 100%;
+	height: 7rem;
+}
+.profileImgContainer {
+	width: 5.5rem;
+	height: 5.5rem;
 	margin: .75rem 0 0 3rem;
 	background-color: #000;
 	float: left;
 }
-.profileAreaLrg {
-	display: inline-block;
-	width: 50rem;
-	height: 15rem;
-}
-.usernameLrg {
-	font-size: 3rem;
-}
-.profileInfo p {
-	margin-top: 0px;
-	margin-bottom: 10px;
-}
-.profilebutton {
-   border-top: 1px solid #96d1f8;
-   background: #00C8F8;
-   background: -webkit-gradient(linear, left top, left bottom, from(#00c6f8), to(#027b96));
-   background: -webkit-linear-gradient(top, #00c6f8, #027b96);
-   background: -moz-linear-gradient(top, #00c6f8, #027b96);
-   background: -ms-linear-gradient(top, #00c6f8, #027b96);
-   background: -o-linear-gradient(top, #00c6f8, #027b96);
-   margin-right: 3rem;
-   margin-left: 1rem;
-   padding: 13.5px 27px;
-   -webkit-border-radius: 14px;
-   -moz-border-radius: 14px;
-   border-radius: 14px;
-   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   box-shadow: rgba(0,0,0,1) 0 1px 0;
-   text-shadow: rgba(0,0,0,.4) 0 1px 0;
-   color: white;
-   font-size: 24px;
-   text-decoration: none;
-   vertical-align: middle;
-   }
-.profilebutton a{
-	padding-right: 70px;
-}
-.profilebutton:hover {
-   border-top-color: #f38430;
-   background: #f38430;
-   color: #ccc;
-   }
-.profilebutton:active {
-   border-top-color: #1b435e;
-   background: #1b435e;
-   }
 
 .tabs input[type=radio] {
           position: absolute;
           top: -9999px;
           left: -9999px;
       }
-      .tabs {
-        width: 650px;
-        float: none;
-        list-style: none;
-        position: relative;
-        padding: 0;
-        margin: 75px auto;
-	z-index:0;
-      }
-      .tabs li{
-        float: left;
-      }
-      .tabs label {
-          display: block;
-          padding: 10px 20px;
-          border-radius: 2px 2px 0 0;
-          color: #00c8f8;
-          font-size: 24px;
-          font-weight: normal;
-          
-          background: rgba(255,255,255,0.2);
-          cursor: pointer;
-          position: relative;
-          top: 3px;
-          -webkit-transition: all 0.2s ease-in-out;
-          -moz-transition: all 0.2s ease-in-out;
-          -o-transition: all 0.2s ease-in-out;
-          transition: all 0.2s ease-in-out;
-      }
-      .tabs label:hover {
-        background: #f38630;
-        top: 0;
-      }
+.tabs {
+	width: 650px;
+	float: none;
+	list-style: none;
+	position: relative;
+	padding: 0;
+	margin: 75px auto;
+}
+.tabs li {
+	float: left;
+}
+.tabs label {
+	display: block;
+	padding: 10px 20px;
+	border-radius: 2px 2px 0 0;
+	color: #00c8f8;
+	font-size: 24px;
+	font-weight: normal;
+	background: rgba(255,255,255,0.2);
+	cursor: pointer;
+	position: relative;
+	top: 3px;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+.tabs label:hover {
+	background: #f38630;
+	top: 0;
+}
        
-      [id^=tab]:checked + label {
-        background: #00c8f8;
-        color: white;
-        top: 0;
-      }
+[id^=tab]:checked + label {
+	background: #00c8f8;
+	color: white;
+	top: 0;
+}
        
-      [id^=tab]:checked ~ [id^=tab-content] {
-          display: block;
-      }
-      .tab-content{
-        z-index: 2;
-        display: none;
-        text-align: left;
-        width: 75%;
-        font-size: 20px;
-        line-height: 140%;
-        padding-top: 10px;
-        background: #00c8f8;
-        padding: 15px;
-        color: white;
-        position: absolute;
-        top: 53px;
-        left: 0;
-        box-sizing: border-box;
-        -webkit-animation-duration: 0.5s;
-        -o-animation-duration: 0.5s;
-        -moz-animation-duration: 0.5s;
-        animation-duration: 0.5s;
-      }
+[id^=tab]:checked ~ [id^=tab-content] {
+	display: block;
+}
+.tab-content{
+	z-index: 2;
+	display: none;
+	text-align: left;
+	width: 75%;
+	font-size: 20px;
+	line-height: 140%;
+	padding-top: 10px;
+	background: #00c8f8;
+	padding: 15px;
+	color: white;
+	position: absolute;
+	top: 53px;
+	left: 0;
+	box-sizing: border-box;
+	-webkit-animation-duration: 0.5s;
+	-o-animation-duration: 0.5s;
+	-moz-animation-duration: 0.5s;
+	animation-duration: 0.5s;
+}
 
 .Tripsbutton {
    border-top: 1px solid #96d1f8;
@@ -642,16 +609,10 @@ div.expandCollapse {
    text-align: center;
 }
 
-
-
-
-
-
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
 .calen_container {
 	height: 25rem;
 	left: 50%;
@@ -661,7 +622,7 @@ table {
 	width: 700px;
 }
 
-/* ---------- CALENDAR ---------- */
+/*------------------Calendar------------------
 
 .calendar {
 	text-align: center;
@@ -687,7 +648,6 @@ table {
 .calendar tbody td:hover {
 	border: 2px solid #00addf;
 }
-
 .calendar td {
 	border: 2px solid transparent;
 	border-radius: 50%;
@@ -697,27 +657,22 @@ table {
 	text-align: center;
 	width: 4em;
 }
-
 .calendar .prev-month,
 .calendar .next-month {
 	color: #cbd1d2;
 }
-
 .calendar .prev-month:hover,
 .calendar .next-month:hover {
 	border: 2px solid #cbd1d2;
 }
-
 .current-day {
 	background: #00addf;
 	color: #f9f9f9;
 }
-
 .event {
 	cursor: pointer;
 	position: relative;
 }
-
 .event:after {
 	background: #00addf;
 	border-radius: 50%;
@@ -730,11 +685,9 @@ table {
 	position: absolute;
 	width: .5em;
 }
-
 .event.current-day:after {
 	background: #f9f9f9;
 }
-
 .btn-prev,
 .btn-next {
 	border: 2px solid #cbd1d2;
@@ -748,18 +701,73 @@ table {
 	top: 50%;
 	width: 2em;
 }
-
 .btn-prev:hover,
 .btn-next:hover {
 	background: #cbd1d2;
 	color: #f9f9f9;
 }
-
 .btn-prev {
 	left: 6em;
 }
-
 .btn-next {
 	right: 6em;
 }
+*/
 
+/*------------------RandomTrips------------------*/
+#tabs {
+	font-size: 20px;
+}
+.ui-widget-header {
+	background:#505050;
+	border: 2px solid #505050;
+	color: #000000;
+	font-weight: bold;
+}
+#right-panel {
+	line-height: 30px;
+	padding-left: 10px;
+}
+#right-panel select, #right-panel input {
+	font-size: 15px;
+}
+#right-panel select {
+	width: 100%;
+}
+#right-panel i {
+	font-size: 12px;
+}
+#right-panel {
+	position: absolute;
+	right: 5%;
+	top: 80%;
+	margin-top: -195px;
+	height: 330px;
+	width: 400px;
+	padding: 5px;
+	z-index: 5;
+	border: 1px solid #999;
+	background: #000;
+}
+#places {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	height: 271px;
+	width: 400px;
+	overflow-y: scroll;
+}
+#places li {
+	background-color: #aaaaaa;
+	padding: 10px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+#places li:nth-child(odd) {
+	background-color: #fcfcfc;
+}
+#more {
+	width: 100%;
+	margin: 5px 0 0 0;
+}

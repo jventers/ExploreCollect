@@ -38,63 +38,47 @@
       $( "#tabs" ).tabs();
     });
 	</script>
-  <!-- tab header styles-->
-  <style>
-         #tabs{font-size: 20px;}
-         .ui-widget-header {
-            background:#505050;
-            border: 2px solid #505050;
-            color: #000000;
-            font-weight: bold;
-         }
-  </style>
 	</head>
 
     <body>
     <header class="header"></header>
-<main class="container">
+	<main class="container">
       <section class="content">  
       <!-- Profile Info --> 
-        <div class="profileAreaLrg">
-          <div class="profileBtnLrg"></div>
-          <div class="profileInfo">
-              <p class="usernameLrg">Username</p>
-              <p>Explorer Points:</p>
-              <p class="explorerPoints">100,000</p>
-          </div>
+        <div class="topProfileArea">
+            <div class="profileImgContainer"></div>
+            <div class="profileInfo">
+            	<h2 class="username">Username</h2>
+        		<p>Explorer Points:</p>
+        		<p class="explorerPoints">100,000</p>
+            </div>
         </div>
-        <div>
-        <!-- edit profile and interests buttons-->
-          <a class="profilebutton" onclick="checkCookie()">Edit Profile</a>
-          <a class="profilebutton">Interests</a>
-        </div>    
+        <div class="profileBtnContainer">
+                <a class="btn" onclick="checkCookie()">Edit Profile</a>
+                <a class="btn">Interests</a>
+        </div>
+    
         <!-- Tabbed space for History and captures-->
         <ul class="tabs">
-        <li>
-          <input type="radio" checked name="tabs" id="tab1">
-          <label for="tab1">History</label>
-          <div id="tab-content1" class="tab-content animated fadeIn">
-            This is where you can see all your recent achievements, locations, and events. As more things are added, this list will get longer and will allow scrolling/swiping
-          </div>
-        </li>
-        <li>
-          <input type="radio" name="tabs" id="tab2">
-          <label for="tab2">Captures</label>
-          <div id="tab-content2" class="tab-content animated fadeIn">
-            This is where you can see all of the images you've captured with this app. As more things are added, this list will get longer and will allow scrolling/swiping
-          </div>
-        </li>
-        
-</ul>
+            <li>
+                <input type="radio" checked name="tabs" id="tab1">
+                <label for="tab1">Achievements</label>
+                <div id="tab-content1" class="tab-content animated fadeIn">
+                This is where you can see all your recent achievements, locations, and events. As more things are added, this list will get longer and will allow scrolling/swiping
+                </div>
+            </li>
+            <li>
+                <input type="radio" name="tabs" id="tab2">
+                <label for="tab2">Recent Images</label>
+                <div id="tab-content2" class="tab-content animated fadeIn">
+                This is where you can see all of the images you've captured with this app. As more things are added, this list will get longer and will allow scrolling/swiping
+                </div>
+            </li>
+        </ul>
       
-         
-      
-         
-      
-      </div>
       </section>
 
-       </main>
+     </main>
 
 </body>
 </html>

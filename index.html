@@ -21,9 +21,11 @@
     <script>
 		google.load("jquery", "1.4.1");
     </script>
+   	<!-- Load Google Maps API -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaWY5QH4ObetGu6TxKARoUpxWggHtJoiE&libraries=places"></script>
     <!-- Include our scripts -->
     <script src="scripts/app.js"></script>
-
+	<script src="scripts/geo.js"></script>
     <!-- Description and Keywords-->
     <meta name="description" content="INSERT DESCRIPTION HERE">
     <meta name="keywords" content="INSERT KEYWORDS HERE">
@@ -72,8 +74,8 @@
     <button class="progressUpdate" >Change Progress</button>
     
     <div id="addLocArea">
-    <p id="initialMsg">It doesn't look like you've added any cities to your list yet.</p>
-    <p><a href="#">Add Current Location</a> or <a href="#">Search for a City</a></p>
+    <p id="locMsg">It doesn't look like you've added any cities to your list yet.</p>
+    <p><a class="currentLoc" onclick="getLocation()">Add Current Location</a> or <a href="#">Search for a City</a></p>
     </div>
   
   </section>
