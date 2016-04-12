@@ -1,34 +1,36 @@
 <!doctype html>
 <html>
-    <head>
+	<head>
 	<!-- DO NOT REMOVE. THIS DEFINES THE CHARACTER SET-->
-    <meta charset="utf-8">
-    <!-- Backwards compatibility for IE. This display the page in edge mode: the highest mode supported by IE 6 - 11 -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Set the width of the page to the screen-width of the device -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Page title-->
-    <title>Individual Location</title>
-    <!-- Link to styles here -->
+	<meta charset="utf-8">
+	<!-- Backwards compatibility for IE. This display the page in edge mode: the highest mode supported by IE 6 - 11 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- Set the width of the page to the screen-width of the device -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Page title-->
+	<title>Individual Location</title>
+	<!-- Link to styles here -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-    <!-- Link to font-awesome -->
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <!-- Link to Open Sans font -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:600;400;300" rel="stylesheet" type="text/css">
-    <!-- Load JavaScript -->
+	<!-- Link to font-awesome -->
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<!-- Link to Open Sans font -->
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:600;400;300" rel="stylesheet" type="text/css">
+	<!-- Load JavaScript -->
 	<script src="http://www.google.com/jsapi"></script>
-    <!-- Load JQuery -->
+	<!-- Load JQuery -->
 	<script>
 		google.load("jquery", "1.4.1");
     </script>
-    <!-- Load Google Maps API -->
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaWY5QH4ObetGu6TxKARoUpxWggHtJoiE"></script>
-    <!-- Include our scripts -->
+	<!-- Load Google Maps API -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaWY5QH4ObetGu6TxKARoUpxWggHtJoiE"></script>
+	<!-- Include our scripts -->
 	<script src="scripts/app.js"></script>
-    <!-- Description and Keywords-->
-    <meta name="description" content="INSERT DESCRIPTION HERE">
-  	<meta name="keywords" content="INSERT KEYWORDS HERE">
-    <!-- Load header-->
+    <script src="scripts/google.js"></script>
+    <script src="scripts/location.js"></script>
+	<!-- Description and Keywords-->
+	<meta name="description" content="INSERT DESCRIPTION HERE">
+	<meta name="keywords" content="INSERT KEYWORDS HERE">
+	<!-- Load header-->
 	<script>
 		$(function(){
 			$(".header").load("header.html"); 
@@ -36,36 +38,45 @@
 	</script>
 	</head>
 
-    <body onload="initMap()">
-<header class="header"> </header>
-<main class="main" hidden> 
-      <!-- Insert main content here -->
-      <section class="content">
-      
-      <div id="googleMap">Click here to begin navigation</div>
-      <script src="scripts/google.js">
-initMap();
-</script>
-      
-      <!-- YOU CAN IGNORE THIS
-      <script type="text/javascript">
-        var location = "The \" + \"Top \" + \"Hat";
-        var city = "Missoula";
-        var state = "Montana";
-        var apikey = "AIzaSyBaWY5QH4ObetGu6TxKARoUpxWggHtJoiE";
-        var url = "https://www.google.com/maps/embed/v1/place?key=" + apikey + "&q=" + location + "," + city + "+" + state;
-		
-    </script>
-    
-      <h2><script>city + "->" + location</script></h2>
-      
-      <iframe width="600"
-          height="450"
-          frameborder="0" style="border:0"
-          src="<script>document.write('<a href="' + url + '">
-      </a>');</script>" allowfullscreen>
-      </iframe> -->
-      </section>
-    </main>
-</body>
+	<body>
+        <header class="header"> </header>
+        
+        <main class="container"> 
+            <!-- Insert main content here -->
+            <section class="content">
+            <a href="index.html" id="backBtn" <i class="fa fa-caret-left fa-lg"></i>  Back</a>
+               <div class="mapTextContainer">
+               		<p class="mapText">Select the map to begin navigation</p>
+               </div>
+               <div id="googleMap"></div>
+               <div id="ratingsAndButtons">
+                   <form id="ratingHands">
+					<input type="radio" name="rating" id="like" value="like"><label for="like"><span class="thumbsUp"></span>1200</label>
+                    <input type="radio" name="rating" id="dislike" value="dislike"><label for="dislike"><span  class="thumbsDown"></span>100</label>
+                   </form>
+                   <div id="addButtons">
+					<a href="#" class="btn">Add Event</a>
+					<a href="#" class="btn">Add to Trip</a>
+                   </div>
+               </div>
+               <div class="sliderNav"><em class="fa fa-chevron-left fa-2x prevPic"></em> <em class="fa fa-chevron-right fa-2x nextPic"></em></div>
+               <div id="slideshow">
+                   <ul id="allPics">
+                       <li class="pictureFrame">
+                           <img src="images/camera-icon.png">
+                       </li>
+                       <li class="pictureFrame">
+                           <img src="images/camera-icon.png">
+                       </li>
+                       <li class="pictureFrame">
+                           <img src="images/camera-icon.png">
+                       </li>
+                       <li class="pictureFrame">
+                           <img src="images/camera-icon.png">
+                       </li>
+                   </ul>
+               </div>
+            </section>
+        </main>
+    </body>
 </html>

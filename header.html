@@ -22,7 +22,7 @@
 		google.load("jquery", "1.4.1");
     </script>
     <!-- Include our scripts -->
-    <script src="scripts/app.js"></script>
+    <script src="scripts/header.js"></script>
     <!-- Description and Keywords-->
     <meta name="description" content="INSERT DESCRIPTION HERE">
     <meta name="keywords" content="INSERT KEYWORDS HERE">
@@ -32,32 +32,38 @@
 <!-- Site-wide Header -->
 <header class="header"> 
       <!-- Main Navigation Button and Logo Area-->
-      <div class="menuTop"> <a href="index.html"><img src="images/explore-collect-logo.png" class="siteLogo" alt="Explore Collect Logo" /></a> <i class="fa fa-ellipsis-v fa-4x menuBtn" alt="Open Menu"></i> </div>
+      <div class="menuTop">
+      	<a href="index.html"><img src="images/explore-collect-logo.png" class="siteLogo" alt="Explore Collect Logo" /></a> <i class="fa fa-ellipsis-v fa-3x menuBtn" alt="Open Menu"></i>
+      </div>
       <h1 id="pageTitle"></h1>
       <script>
       document.getElementById('pageTitle').innerHTML = document.title;
 	  </script>
-      <div class="menu"> 
+      <div class="menu">
+    	<ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="profile.html">Profile</a></li>
+        </ul>
     <!-- Profile Image, Level, and Points -->
     <div class="profileArea">
           <div class="profileBtn"></div>
           <div class="profileInfo">
-        <p class="username">Username</p>
-        <p>Explorer Points:</p>
-        <p class="explorerPoints">100,000</p>
-      </div>
+    	    <h2 class="username">Username</h2>
+        	<p>Explorer Points:</p>
+        	<p class="explorerPoints">100,000</p>
+      	</div>
         </div>
-    <ul>
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Trips</a></li>
-          <li><a href="#">Events</a></li>
-          <li><a href="#">Settings</a></li>
-          <li><a href="#">Help</a></li>
-        </ul>
-    <div class="social">
-          <p>Follow us:</p>
-          <i class="fa fa-facebook-square fa-2x"></i> <i class="fa fa-twitter-square fa-2x"></i> </div>
-  </div>
+          <ul>
+        <li><a href="trips.html">Trips</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="#">Help</a></li>
+      </ul>
+          <div class="social">
+        <p>Follow us:</p>
+        <i class="fa fa-facebook-square fa-2x"></i> <i class="fa fa-twitter-square fa-2x"></i> </div>
+        </div>
+  
     </header>
 </body>
 </html>

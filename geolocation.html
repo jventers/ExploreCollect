@@ -39,32 +39,31 @@
     <body onload="initMap()">
 <header class="header"> </header>
 <main class="main" hidden> 
-      <!-- Insert main content here -->
-      <section class="content">
-      
-      <div id="googleMap">Click here to begin navigation</div>
-      <script src="scripts/google.js">
-initMap();
-</script>
-      
-      <!-- YOU CAN IGNORE THIS
-      <script type="text/javascript">
-        var location = "The \" + \"Top \" + \"Hat";
-        var city = "Missoula";
-        var state = "Montana";
-        var apikey = "AIzaSyBaWY5QH4ObetGu6TxKARoUpxWggHtJoiE";
-        var url = "https://www.google.com/maps/embed/v1/place?key=" + apikey + "&q=" + location + "," + city + "+" + state;
-    
-    </script>
-    
-      <h2><script>city + "->" + location</script></h2>
-      
-      <iframe width="600"
-          height="450"
-          frameborder="0" style="border:0"
-          src="<script>document.write('<a href="' + url + '">
-      </a>');</script>" allowfullscreen>
-      </iframe> -->
+      <section class="content">  
+      <!-- Insert main content here --> 
+   
+    <script>
+	 var options = {
+  	enableHighAccuracy: true,
+  	timeout: 5000,
+  	maximumAge: 0
+};
+
+function success(pos) {
+  var crd = pos.coords;
+
+  console.log('Your current position is:');
+  console.log('Latitude : ' + crd.latitude);
+  console.log('Longitude: ' + crd.longitude);
+  console.log('More or less ' + crd.accuracy + ' meters.');
+};
+
+function error(err) {
+  console.warn('ERROR(' + err.code + '): ' + err.message);
+};
+
+navigator.geolocation.getCurrentPosition(success, error, options);
+      </script>
       </section>
     </main>
 </body>
