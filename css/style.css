@@ -507,3 +507,18 @@ table {
 	right: 6em;
 }
 
+/*************************FILTER**********************/
+.filter p {
+	color:white;
+}
+.filterinfo {
+	font-size: 1em;
+	color: white;
+}
+
+#scrollbox {
+    overflow: scroll;
+    width: 600px;
+    height: 100px;
+}
+

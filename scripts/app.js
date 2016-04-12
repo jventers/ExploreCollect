@@ -98,7 +98,28 @@ $('.progressUpdate').click(function() {
         }
     });
     
-
+function addEvents() {
+    var scrollbox = document.getElementById('scrollbox');
+    
+    // Create div
+    var newElement = document.createElement('div');//to hold events/locations info box
+    newElement.setAttribute('id', "new-info-box");
+    
+    newElement.innerHTML = 'New event has been added!'; 
+    
+    scrollbox.appendChild(newElement);
+}
+function addLocations() {
+    var scrollbox = document.getElementById('scrollbox');
+    
+    // Create div
+    var newElement = document.createElement('div');//to hold events/locations info box
+    newElement.setAttribute('id', "new-info-box");
+    
+    newElement.innerHTML = 'New event has been added!'; 
+    
+    scrollbox.appendChild(newElement);
+}
     
 }; // End Main
 $(document).ready(main);

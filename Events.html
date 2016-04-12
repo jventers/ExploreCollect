@@ -54,37 +54,25 @@
     <body>
     <header class="header"></header>
 <main class="container">
+      
+      
       <section class="content">  
+      <p class="filterinfo">Show Events Within:</p>
+        <select>
+        <option value=25>25 Miles (default)</option>
+        <option value=50>50 Miles</option>
+        <option value=75>75 Miles</option>
+        <option value=100>100 Miles</option>
+        </select>
       
-        <p id="date"></p>
-          <script>
-          var d = new Date();
-          document.getElementById("date").innerHTML = d.toDateString();
-          </script>  
-        <!-- Tabbed space for History and captures-->
-        <ul class="tabs">
-        <li>
-          <input type="radio" checked name="tabs" id="tab1">
-          <label for="tab1">Tonight</label>
-          <div id="tab-content1" class="tab-content animated fadeIn">
-            This is where you can find events happening tonight in your area, these are not suggested through popularity or reviews and are intended for spontaneous users. These events will yield higher explorer points
-          </div>
-        </li>
-        <li>
-          <input type="radio" name="tabs" id="tab2">
-          <label for="tab2">Upcoming</label>
-          <div id="tab-content2" class="tab-content animated fadeIn">
-            This is where you can find all upcoming events, these are suggested through popularity and reviews. They yield a good amount of explorer points, depending on the size of event
-          </div>
-        </li>
+
+        <div id="scrollbox"></div>
         
-</ul>
-      
          
       
          
       
-      </div>
+      
       </section>
 
        </main>
