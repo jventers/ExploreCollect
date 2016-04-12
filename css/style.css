@@ -491,26 +491,53 @@ div.expandCollapse {
 }
 
 /*-----------------Profile Page-------------------*/
-.topProfileArea {
-	display: inline-block;	
+.firstProfileArea {
+	display: -webkit-flex; /* Safari */
+    -webkit-justify-content: space-around; /* Safari 6.1+ */
+    display: flex;
+    justify-content: space-between;	
 	width: 100%;
 	height: 7rem;
+}
+.secondProfileArea {
+	display: -webkit-flex; /* Safari */
+    -webkit-justify-content: space-around; /* Safari 6.1+ */
+    display: flex;
+    justify-content: space-between;	
+	width: 100%;
 }
 .profileImgContainer {
 	width: 5.5rem;
 	height: 5.5rem;
-	margin: .75rem 0 0 3rem;
+	margin: 0px;
 	background-color: #000;
 	float: left;
 }
-
+.userLevel {
+	width: 5.5rem;
+	float: left;	
+	text-align: center;
+	margin-top: -40px;
+}
+.profileBtnContainer {
+	display: -webkit-flex; /* Safari */
+    -webkit-justify-content: space-around; /* Safari 6.1+ */
+    display: flex;
+    justify-content: space-around;	
+	width: 495px;
+	margin-top: -30px;
+}
+.profileBtnContainer a {
+	width: 165px;	
+	text-align: center;
+}
 .tabs input[type=radio] {
-          position: absolute;
-          top: -9999px;
-          left: -9999px;
-      }
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
 .tabs {
-	width: 650px;
+	width: 100%;
 	float: none;
 	list-style: none;
 	position: relative;
@@ -536,10 +563,6 @@ div.expandCollapse {
 	-o-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
 }
-.tabs label:hover {
-	background: #f38630;
-	top: 0;
-}
        
 [id^=tab]:checked + label {
 	background: #00c8f8;
@@ -554,7 +577,7 @@ div.expandCollapse {
 	z-index: 2;
 	display: none;
 	text-align: left;
-	width: 75%;
+	width: 80%;
 	font-size: 20px;
 	line-height: 140%;
 	padding-top: 10px;
