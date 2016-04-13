@@ -12,7 +12,7 @@
     <!-- Link to styles here -->
 	<link rel="stylesheet" type="text/css" href="css/login.css">
     <!-- Link to font-awesome -->
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <!-- Link to Open Sans font -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:600;400;300" rel="stylesheet" type="text/css">
     <!-- Load JavaScript -->
@@ -22,7 +22,7 @@
 		google.load("jquery", "1.4.1");
     </script>
     <!-- Include our scripts -->
-	<script src="scripts/app.js"></script>
+	<script src="scripts/login.js"></script>
     <!-- Description and Keywords-->
     <meta name="description" content="INSERT DESCRIPTION HERE">
   	<meta name="keywords" content="INSERT KEYWORDS HERE">
@@ -30,28 +30,30 @@
 	<body>
 
 <main class="container">
-      <section class="content">
+      <h1>Explore<span>/</span>Collect</h1>
+      <div class="content">
+      
     <h2>Login</h2>
     
     <form action="Login" method="get" class="loginForm">
-          <div>
         <input type="email" id="emailLogin" placeholder="Email" size="30"/><label id="message1" style="color:red"></label>
-      </div>
-          <div>
         <input type="password" id="passwordLogin" name="password" size="30" placeholder="Password" /><label id="message2" style="color:red"></label>
-      </div>
-          <div>
-        <input type="button" value="Login" class="loginBtn" />
-      </div>
 
+	<div class="forgetSubmitRow">
+		<a href="#">Forget Password?</a>
+          
+        <input type="submit" value="Submit" class="btn loginBtn" />
+	</div>
 
-    <button class="facebook_button">Login with Facebook</button>
-
+	<div class="externalLogin">
+    <button class="facebookLogin"><i class="fa fa-facebook fa-3x"></i>Login with Facebook</button>
+    <button class="googleLogin"><i class="fa fa-google-plus fa-3x"></i>Login with Google</button>
+	</div>
 
         </form>
 
     
-  </section>
+  </div>
 
     </main>
     

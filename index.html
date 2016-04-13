@@ -12,7 +12,7 @@
     <!-- Link to styles here -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <!-- Link to font-awesome -->
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <!-- Link to Open Sans font -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:600;400;300" rel="stylesheet" type="text/css">
     <!-- Load JavaScript -->
@@ -24,8 +24,9 @@
    	<!-- Load Google Maps API -->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaWY5QH4ObetGu6TxKARoUpxWggHtJoiE&libraries=places"></script>
     <!-- Include our scripts -->
-    <script src="scripts/app.js"></script>
+    <script src="scripts/home.js"></script>
 	<script src="scripts/geo.js"></script>
+    <script src="scripts/nearbySearch.js"></script>
     <!-- Description and Keywords-->
     <meta name="description" content="INSERT DESCRIPTION HERE">
     <meta name="keywords" content="INSERT KEYWORDS HERE">
@@ -49,7 +50,7 @@
             <div class="expandCollapse">
                 <div id="myProgress">
                     <div id="myBar">
-                        <h2 class="city">Missoula</h2>
+                        <h2 id="currentCity" class="city"></h2>
                         <p id="label">0%</p>
                     </div> <!-- End myBar -->
             	</div> <!-- End myProgress -->
@@ -63,20 +64,24 @@
                         </div> <!-- End myBar -->
                     </div> <!-- End myProgress -->
                 </div> <!-- End expandCollapse -->
-                <div class="showHide">
-                <h4 class="location"><a href="location-detail.html">The Rhino</a></h4>
-           		</div> <!-- End expandCollapse -->
+                <div id="bars" class="showHide">
+                
+                <!-- THIS IS AN EXAMPLE OF WHAT GETS LOADED HERE
+                <h4 class="location"><a href="location-detail.html">The Rhino</a></h4> -->
+           		
+                </div> <!-- End expandCollapse -->
             </div> <!-- End showHide -->
         </div> <!-- End Cities -->
         
         
         
-    <button class="progressUpdate" >Change Progress</button>
+    <input type="submit" class="progressUpdate btn" value="Change Progress">
     
     <div id="addLocArea">
     <p id="locMsg">It doesn't look like you've added any cities to your list yet.</p>
-    <p><a class="currentLoc" onclick="getLocation()">Add Current Location</a> or <a href="#">Search for a City</a></p>
-    </div>
+    <p><a class="currentLoc" onclick="initMap(getCoordinates(),'bar')">Add Current Location</a> or <a href="#">Search for a City</a></p>
+    <br></div>
+    <div id="location"></div>
   
   </section>
     </main>
