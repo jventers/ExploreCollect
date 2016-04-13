@@ -53,10 +53,17 @@ window.onload = function() {
 };
 
 function getCoordinates(){
+
+
+	locationText = locationText.split(" ");
+
+
+	document.getElementById("currentCity").innerHTML = locationText[0];
 	return coordinates;
 }
 
 function getLocation(){
+	//document.getElementById('myBar').innerHTML = '\<h2 class="city">' + locationText + '\</h2>';
 	return locationText;
-	//document.getElementById('current').innerHTML = locationText;
+
 }
