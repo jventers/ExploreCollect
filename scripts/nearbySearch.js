@@ -29,6 +29,18 @@ function processResults(results, status, pagination) {
         searchResults = results;
 
         searchResults.forEach(function(item){ console.log(item.name);});
+
+        document.createElement('div')
+
+       var placesList = document.getElementById('bars');
+
+       for (var i = 0, place; place = results[i]; i++) {
+
+           var node = document.createElement("h4");
+           node.innerHTML = '\<a href="location-detail.html">' + place.name + '\</a>';
+           placesList.appendChild(node);// += '<li>' + place.name + '</li>';
+
+       }
 //        console.log(searchResults);
 
      //   if (pagination.hasNextPage) {
