@@ -7,22 +7,18 @@
 var map;
 var searchResults;
 
-function initMap(lat,lng,searchParam) {
-    console.log(lat,lng);
-    var myLocation = {lat: -33.866, lng: 151.196};
+function initMap(coords,searchParam) {
 
-     map = new google.maps.Map(document.createElement('div'))
+    var myLocation = coords;
+
+     map = new google.maps.Map(document.createElement('div'));
 
     var service = new google.maps.places.PlacesService(map);
     service.nearbySearch({
         location: myLocation,
-        radius: 500,
+        radius: 5000,
         type: [searchParam]
     }, processResults);
-    //var places = new google.maps.places.PlacesService(document.getElementById('map'));
-    //var destinations = new google.maps.places.PlacesService(map);
-    //console.log(places);
-   // return 'testing: ' + searchResults[0].name;
 }
 
 function processResults(results, status, pagination) {
@@ -31,26 +27,28 @@ function processResults(results, status, pagination) {
     } else {
 
         searchResults = results;
-        console.log(searchResults);
 
-        if (pagination.hasNextPage) {
-            var moreButton = document.getElementById('more');
+        searchResults.forEach(function(item){ console.log(item.name);});
+//        console.log(searchResults);
 
-            moreButton.disabled = false;
-
-            moreButton.addEventListener('click', function() {
-                moreButton.disabled = true;
-                pagination.nextPage();
-            });
-        }
-            var placesList = document.getElementById('places');
-
-            for (var i = 0, place; place = results[i]; i++) {
-
-                placesList.innerHTML += '<li>' + place.name + '</li>';
-
-            }
-        var test = document.getElementById('demo').innerHTML='testing: ' + searchResults[0].name;
+     //   if (pagination.hasNextPage) {
+     //       var moreButton = document.getElementById('more');
+     //
+     //       moreButton.disabled = false;
+     //
+     //       moreButton.addEventListener('click', function() {
+     //           moreButton.disabled = true;
+     //           pagination.nextPage();
+     //       });
+     //   }
+     //       var placesList = document.getElementById('places');
+     //
+     //       for (var i = 0, place; place = results[i]; i++) {
+     //
+     //           placesList.innerHTML += '<li>' + place.name + '</li>';
+     //
+     //       }
+     //   var test = document.getElementById('demo').innerHTML='testing: ' + searchResults[0].name;
     }
 }
 

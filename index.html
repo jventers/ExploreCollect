@@ -26,6 +26,7 @@
     <!-- Include our scripts -->
     <script src="scripts/app.js"></script>
 	<script src="scripts/geo.js"></script>
+    <script src="scripts/nearbySearch.js"></script>
     <!-- Description and Keywords-->
     <meta name="description" content="INSERT DESCRIPTION HERE">
     <meta name="keywords" content="INSERT KEYWORDS HERE">
@@ -75,8 +76,9 @@
     
     <div id="addLocArea">
     <p id="locMsg">It doesn't look like you've added any cities to your list yet.</p>
-    <p><a class="currentLoc" onclick="getLocation()">Add Current Location</a> or <a href="#">Search for a City</a></p>
-    </div>
+    <p><a class="currentLoc" onclick="initMap(getCoordinates(),'bar')">Add Current Location</a> or <a href="#">Search for a City</a></p>
+    <br></div>
+    <div id="location"></div>
   
   </section>
     </main>
