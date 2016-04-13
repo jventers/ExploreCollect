@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 // JavaScript Document
+=======
+>>>>>>> origin/dev_john
 var locationText;
 var coordinates;
 window.onload = function() {
