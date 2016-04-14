@@ -12,7 +12,6 @@ function initMap(coords,searchParam) {
 
      map = new google.maps.Map(document.createElement('div'));
 
-
     var service = new google.maps.places.PlacesService(map);
     service.nearbySearch({
         location: myLocation,
@@ -27,7 +26,6 @@ function processResults(results, status, pagination) {
     } else {
 
         searchResults = results;
-
 
         searchResults.forEach(function(item) {
             console.log(item.name);
@@ -45,6 +43,8 @@ function processResults(results, status, pagination) {
             placesList.appendChild(node); // += '<li>' + place.name + '</li>';
 
         }
+
+    //All TEST CODE FOR FUTURE REFERENCE
         //        console.log(searchResults);
 
         //   if (pagination.hasNextPage) {
