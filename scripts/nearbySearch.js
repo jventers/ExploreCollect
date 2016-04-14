@@ -5,19 +5,13 @@
 var map;
 var searchResults;
 
-<<<<<<< HEAD
-function initMap(coords, searchParam) {
 
-    var myLocation = coords;
-
-    map = new google.maps.Map(document.createElement('div'));
-=======
 function initMap(coords,searchParam) {
 
     var myLocation = coords;
 
      map = new google.maps.Map(document.createElement('div'));
->>>>>>> origin/dev_john
+
 
     var service = new google.maps.places.PlacesService(map);
     service.nearbySearch({
@@ -34,7 +28,7 @@ function processResults(results, status, pagination) {
 
         searchResults = results;
 
-<<<<<<< HEAD
+
         searchResults.forEach(function(item) {
             console.log(item.name);
         });
@@ -71,7 +65,7 @@ function processResults(results, status, pagination) {
         //
         //       }
         //   var test = document.getElementById('demo').innerHTML='testing: ' + searchResults[0].name;
-=======
+
         searchResults.forEach(function(item){ console.log(item.name);});
 
         document.createElement('div')
@@ -105,7 +99,7 @@ function processResults(results, status, pagination) {
      //
      //       }
      //   var test = document.getElementById('demo').innerHTML='testing: ' + searchResults[0].name;
->>>>>>> origin/dev_john
+
     }
 }
 
