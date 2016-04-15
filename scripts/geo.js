@@ -1,7 +1,6 @@
-<<<<<<< HEAD
+
 // JavaScript Document
-=======
->>>>>>> origin/dev_john
+
 var locationText;
 var coordinates;
 window.onload = function() {
@@ -10,7 +9,7 @@ window.onload = function() {
 	var startPos;
 	var geoOptions = {
 		enableHighAccuracy: true
-	}
+	};
 
 	var geoSuccess = function(position) {
 		var geocoder = new google.maps.Geocoder;
@@ -67,7 +66,7 @@ function getCoordinates(){
 }
 
 function getLocation(){
-	//document.getElementById('myBar').innerHTML = '\<h2 class="city">' + locationText + '\</h2>';
+	//document.getElementsByClassName('myBar').innerHTML = '\<h2 class="city">' + locationText + '\</h2>';
 	return locationText;
 
 }

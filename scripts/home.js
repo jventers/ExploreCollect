@@ -3,19 +3,20 @@ var main = function() {
 
     /*-------------Progress Bar-------------*/
     $('.progressUpdate').click(function() {
-        var elem = document.getElementById("myBar");
+        var $elem = $(".myBar");
+		var $percent = $(".percentage");
         var width = 1;
         var id = setInterval(frame, 10);
 
         function frame() {
             if (width >= 100) {
                 clearInterval(id);
-                elem.style.backgroundColor = "#a9cf54";
+                $elem.css('backgroundColor', '#a9cf54');
             } else {
-                elem.style.backgroundColor = "#f38640";
+                $elem.css('backgroundColor', '#f38640');
                 width++;
-                elem.style.width = width + '%';
-                document.getElementById("label").innerHTML = width * 1 + '%';
+                $elem.css('width', width + '%');
+                $percent.html(width * 1 + '%');
             }
         }
     });
