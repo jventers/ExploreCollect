@@ -10,7 +10,7 @@
     <!-- Page title-->
     <title>Home</title>
     <!-- Link to styles here -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link id="styles" rel="stylesheet" type="text/css" href="css/style.css">
     <!-- Link to font-awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <!-- Link to Open Sans font -->
@@ -36,6 +36,26 @@
 			$(".header").load("header.html"); 
 		});
 	</script>
+        <script>
+            function doSearch(coords){
+
+                var params = ['bar','store','park','library'];
+
+                params.forEach(
+                        function(item){
+                            function checkFlag() {
+                                if(getFlag() == false) {
+                                    window.setTimeout(checkFlag, 100); /* this checks the flag every 100 milliseconds*/
+                                } else {
+                                    /* do something*/
+                                    initMap(coords,item);
+                                }
+                            }
+                            checkFlag();
+
+                        })
+            }
+        </script>
     </head>
 
     <body>
@@ -45,8 +65,8 @@
     <section class="content">
     
     <a href="#" id="editHome">Edit</a>
-    
-        <div class="cities">
+
+        <div id="main" class="cities">
             <div class="expandCollapse">
                 <div id="myProgress">
                     <div id="myBar">
@@ -55,6 +75,7 @@
                     </div> <!-- End myBar -->
             	</div> <!-- End myProgress -->
         	</div> <!-- End expandCollapse -->
+
         	<div class="showHide">
             	<div class="expandCollapse">
                     <div id="myProgress">
@@ -66,23 +87,45 @@
                 </div> <!-- End expandCollapse -->
                 <div id="bars" class="showHide">
 
-                
+
                 <!-- THIS IS AN EXAMPLE OF WHAT GETS LOADED HERE
                 <h4 class="location"><a href="location-detail.html">The Rhino</a></h4> -->
-           		
-                </div> <!-- End expandCollapse -->
-           		</div> <!-- End expandCollapse -->
+                    <h4 class="location"><a href="location-detail.html">The Rhino</a></h4>
 
+                </div> <!-- End expandCollapse -->
+
+
+                </div> <!-- End expandCollapse -->
+            <div class="showHide">
+                <div class="expandCollapse">
+                    <div id="myProgress">
+                        <div id="myBar">
+                            <h3 class="category">Bars</h3>
+                            <p id="label">0%</p>
+                        </div> <!-- End myBar -->
+                    </div> <!-- End myProgress -->
+                </div> <!-- End expandCollapse -->
+                <div id="bars" class="showHide">
+
+
+                    <!-- THIS IS AN EXAMPLE OF WHAT GETS LOADED HERE
+                    <h4 class="location"><a href="location-detail.html">The Rhino</a></h4> -->
+                    <h4 class="location"><a href="location-detail.html">The Rhino</a></h4>
+
+                </div> <!-- End expandCollapse -->
+
+
+            </div> <!-- End expandCollapse -->
             </div> <!-- End showHide -->
         </div> <!-- End Cities -->
-        
+
         
         
     <input type="submit" class="progressUpdate btn" value="Change Progress">
     
     <div id="addLocArea">
     <p id="locMsg">It doesn't look like you've added any cities to your list yet.</p>
-    <p><a class="currentLoc" onclick="initMap(getCoordinates(),'bar')">Add Current Location</a> or <a href="#">Search for a City</a></p>
+    <p><a class="currentLoc" onclick="doSearch(getCoordinates())">Add Current Location</a> or <a href="#">Search for a City</a></p>
     <br></div>
     <div id="location"></div>
   
