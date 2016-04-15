@@ -216,6 +216,8 @@ a:hover {
 	text-decoration: none;
 	color: #fff;
 	margin: 0px;
+	height: 2.5rem;
+	line-height: 2.5rem;
 }
 
 .btn:active, .btn:hover {
@@ -234,7 +236,7 @@ input[type="submit"] {
 	border:none;
 	font-size: 1rem;
 	cursor: pointer;
-	height: 2.5rem;
+	
 }
 
 /*------------------Checkboxes------------------*/
@@ -419,7 +421,6 @@ div.expandCollapse {
     justify-content: flex-start;
 }
 #addButtons a {
-	font-size: .75rem;
 	margin-left: 20px;
 }
 #ratingHands label {
