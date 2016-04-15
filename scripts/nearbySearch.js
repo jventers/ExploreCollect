@@ -5,12 +5,12 @@
 var map;
 var searchResults;
 
-
 function initMap(coords, searchParam) {
 
     var myLocation = coords;
 
     map = new google.maps.Map(document.createElement('div'));
+
 
 
     var service = new google.maps.places.PlacesService(map);
@@ -33,7 +33,7 @@ function processResults(results, status, pagination) {
             console.log(item.name);
         });
 
-        document.createElement('div')
+        document.createElement('div');
 
         var placesList = document.getElementById('bars');
 
@@ -65,6 +65,7 @@ function processResults(results, status, pagination) {
         //
         //       }
         //   var test = document.getElementById('demo').innerHTML='testing: ' + searchResults[0].name;
+
 
     }
 }
