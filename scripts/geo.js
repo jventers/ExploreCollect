@@ -17,12 +17,12 @@ window.onload = function() {
 
 		startPos = position;
 		console.log(startPos);
-		//var location = "long: " + startPos.coords.longitude + " Lat: " + startPos.coords.latitude;
+
 		var latlng = {lat:startPos.coords.latitude,lng:startPos.coords.longitude};
 		coords = latlng;
 		coordinates = coords;
-		//document.getElementById('location').innerHTML = location;
 
+		//Decode coordinates into a named location
 		geocoder.geocode({'location': latlng}, function(results, status) {
 			if (status === google.maps.GeocoderStatus.OK) {
 				if (results[1]) {
@@ -40,8 +40,6 @@ window.onload = function() {
 			}
 		});
 
-
-
 	};
 	var geoError = function(error) {
 		console.log('Error occurred. Error code: ' + error.code);
@@ -57,16 +55,13 @@ window.onload = function() {
 
 function getCoordinates(){
 
-
 	locationText = locationText.split(" ");
-
-
-	document.getElementById("currentCity").innerHTML = locationText[0];
+	document.getElementById("currentCity").innerHTML = locationText[0].replace(',','');
 	return coordinates;
 }
+
 
 function getLocation(){
 	//document.getElementById('myBar').innerHTML = '\<h2 class="city">' + locationText + '\</h2>';
 	return locationText;
-
 }

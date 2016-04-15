@@ -33,7 +33,7 @@ function processResults(results, status, pagination) {
             console.log(item.name);
         });
 
-        document.createElement('div')
+        document.createElement('div');
 
         var placesList = document.getElementById('bars');
 
