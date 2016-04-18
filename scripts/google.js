@@ -6,16 +6,6 @@
 /*-------------Login with Google-------------*/
 /*-------------Individual Location - Google Map-------------*/
 
-var urlParam = function(name, w){
-    w = w || window;
-    var rx = new RegExp('[\&|\?]'+name+'=([^\&\#]+)'),
-        val = w.location.search.match(rx);
-    return !val ? '':val[1];
-};
-
-
-
-
 	function initMap() {
 
         var windowLocation = window.location;
@@ -29,12 +19,14 @@ var urlParam = function(name, w){
 
 
 
-		var latitude = 46.876973;
-		var longitude = -114.016406;
-		var destLatLong = {
-			lat: latitude,
-			lng: longitude
-	};
+//		var latitude = 46.876973;
+//		var longitude = -114.016406;
+        var latitude;
+        var longitude;
+	//	var destLatLong = {
+	//		lat: latitude,
+	//		lng: longitude
+	//};
 
 
 
@@ -57,7 +49,7 @@ var urlParam = function(name, w){
 
     var mapCanvas = document.getElementById("googleMap");
     var mapOptions = {
-        center: destLatLong,
+        //center: destLatLong,
         zoom: 12,
         disableDefaultUI: true,
         draggable: false,
@@ -84,8 +76,10 @@ var urlParam = function(name, w){
                         map: map,
                         title: 'Click to begin navigation'
                     });
-                    //infowindow.setContent(results[0].formatted_address);
-                    //infowindow.open(map, marker);
+
+                    latitude = marker.getPosition().lat();
+                    longitude = marker.getPosition().lng();
+                    console.log(latitude + ' : ' + longitude);
                 } else {
                     window.alert('No results found');
                 }
@@ -95,18 +89,9 @@ var urlParam = function(name, w){
         });
 
 
-    ///* Customize the Map Marker */
-    //var image = 'images/map-marker-icon.png';
-    //var marker = new google.maps.Marker({
-    //    position: destLatLong,
-    //    icon: image,
-    //    map: map,
-    //    title: 'Click to begin navigation'
-    //});
-
-
 
     // I don't understand what this line does but Google made it sound important
+        // This is for the click on map to load navigation service I think it adds a listener to the map for when the user clicks on it
     google.maps.event.addDomListener(window, 'load', initMap);
 
 
