@@ -29,9 +29,9 @@ function processResults(results, status, pagination) {
         searchResults = results;
 
 
-        searchResults.forEach(function(item) {
-            console.log(item.name);
-        });
+       // searchResults.forEach(function(item) {
+       //     console.log(item.name);
+       // });
 
         document.createElement('div');
 
@@ -39,9 +39,11 @@ function processResults(results, status, pagination) {
 
         for (var i = 0, place; place = results[i]; i++) {
 
+            console.log(place);
             var node = document.createElement("h4");
             node.className = "location";
-            node.innerHTML = '\<a href="location-detail.html">' + place.name + '\</a>';
+            var myLink = "location-detail.html?User_Id=" + place.place_id;
+            node.innerHTML = '\<a href=' + myLink + '\>' + place.name + '\</a>';
             placesList.appendChild(node); // += '<li>' + place.name + '</li>';
 
         }
