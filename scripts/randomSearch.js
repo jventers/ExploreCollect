@@ -4,9 +4,11 @@
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 var map;
 var searchResults;
+var flag = true;
 
 function initMap(coords, searchParam) {
 
+    flag = true;
     var myLocation = coords;
 
     map = new google.maps.Map(document.createElement('div'));
@@ -68,10 +70,14 @@ function processResults(results, status, pagination) {
                }
       //     var test = document.getElementById('demo').innerHTML='testing: ' + searchResults[0].name;
 
-
+flag = false;
     }
 }
 
+
+function getFlag(){
+    return flag;
+}
 function getResults() {
     return searchResults;
 }

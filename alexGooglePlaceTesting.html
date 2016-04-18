@@ -52,33 +52,60 @@
             //initMap(getCoordinates(), document.getElementById('park').name);
         }
     </script> -->
-    <script>
-        function parseBoxes(){
+    <!--    <script>
+           function parseBoxes(){
 
-            var ul = document.getElementById("first_list");
-            var items = ul.getElementsByTagName("li");
-            var coords = getCoordinates();
+               var ul = document.getElementById("first_list");
+               var items = ul.getElementsByTagName("li");
+               var coords = getCoordinates();
 
-            items.forEach(function(i){}
-                function checkFlag() {
-                    if (getFlag() == false) {
-                        window.setTimeout(checkFlag, 100);
-                        /* this checks the flag every 100 milliseconds*/
-                    } else {
-                        console.log(item[i].firstChild.checked);
-                        if (items[i].firstChild.value)
-                            console.log(item[i].firstChild.id);
-                        initMap(coords, item[i].firstChild.id);
-                        // do something with items[i], which is a <li> element
-                    }
-                }
+               items.forEach(
+                       function(item){
+                           function checkFlag() {
+                               if(getFlag() == false) {
+                                   window.setTimeout(checkFlag, 100); /* this checks the flag every 100 milliseconds*/
+                               } else {
+                                   console.log(item.firstChild.checked);
+                                   if (item.firstChild.value)
+                                       console.log(item.firstChild.id);
+                                   initMap(coords, item.firstChild.id);
+                                   // do something with items[i], which is a <li> element
+                               }
+                           }
+                           checkFlag();
 
-                checkFlag();
-        )}
+                       })
+           }
+       </script> -->
+       <script>
+           function parseBoxes() {
+
+               var ul = document.getElementById("first_list");
+               var items = ul.getElementsByTagName("li");
+               var coords = getCoordinates();
+
+               for (var i = 0; i < items.length; ++i) {
+
+                   function checkFlag(ul,i) {
+                       if (getFlag() == false) {
+                           window.setTimeout(checkFlag(items,i), 100);
+                           /* this checks the flag every 100 milliseconds*/
+                       } else {
+                           console.log(ul[i].firstChild.checked);
+                           if (ul[i].firstChild.value)
+                               console.log(ul[i].firstChild.id);
+                           initMap(coords, ul[i].firstChild.id);
+                           // do something with items[i], which is a <li> element
+                       }
+                   }
+
+                   checkFlag(items,i);
+               }
+           }
 
 
 
-    </script>
+       </script>
     </head>
 <body>
 <header class="header"></header>
