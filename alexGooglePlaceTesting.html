@@ -21,9 +21,12 @@
     <script>
 		google.load("jquery", "1.4.1");
     </script>
+    <!-- Load Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaWY5QH4ObetGu6TxKARoUpxWggHtJoiE&libraries=places"></script>
     <!-- Include our scripts -->
     <script src="scripts/app.js"></script>
-    <script src="scripts/nearbySearch.js"></script>
+    <script src="scripts/geo.js"></script>
+    <script src="scripts/randomSearch.js"></script>
     <!-- Description and Keywords-->
     <meta name="description" content="INSERT DESCRIPTION HERE">
     <meta name="keywords" content="INSERT KEYWORDS HERE">
@@ -33,59 +36,96 @@
 			$(".header").load("header.html"); 
 		});
 	</script>
+    <script>
+        function parseBoxes(){
+            var ul = document.getElementById("first_list");
+            var items = ul.getElementsByTagName("li");
+            var coords = getCoordinates();
+            for (var i = 0; i < items.length; ++i) {
+                console.log(items[i].firstChild.checked);
+                if(items[i].firstChild.value)
+                console.log(items[i].firstChild.id);
+                initMap(coords, items[i].firstChild.id);
+                // do something with items[i], which is a <li> element
+            }
+
+            //initMap(getCoordinates(), document.getElementById('park').name);
+        }
+    </script>
     </head>
 <body>
 <header class="header"></header>
 <main class="container">
-  <section class="content">
-    <p id="lat"></p>
-    <p id="lng"></p>
-    <br>
-    <script>
-              // Try HTML5 geolocation.
-              if (navigator.geolocation) {
-                  navigator.geolocation.getCurrentPosition(function(position) {
-                      var pos = {
-                          lat: position.coords.latitude,
-                          lng: position.coords.longitude
-                      };
-                        console.log(pos);
-                      document.getElementById('lat').innerHTML = pos[0];
-                      document.getElementById('lng').innerHTML = pos[1];
-                  }, function() {
-                      handleLocationError(true, infoWindow);
-                  });
-              } else {
-                  // Browser doesn't support Geolocation
-                  handleLocationError(false, infoWindow);
-              }
-              function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-                  //infoWindow.setPosition(pos);
-                 // infoWindow.setContent(browserHasGeolocation ?
-                  //        'Error: The Geolocation service failed.' :
-                   //       'Error: Your browser doesn\'t support geolocation.');
-              }
-          </script>
-    <p id="demo"></p>
-    <div id="map"></div>
-    <div id="right-panel">
+    <form>
+        <div id="checkboxList">
+            <h3>Options and Settings</h3>
+
+            <li><input type="text" id="num_stops" value="5"><label for="num_stops">Number of stops</label></li>
+            <li><input type="text" id="radius" value="10"><label for="radius">Max distance to travel</label></li>
+
+            <h3>Entertainment & Sight-Seeing</h3>
+            <ul id="first_list">
+                <li><input type="checkbox" id="amusement_park" name="amusement_park_cb" value="1" checked><label for="amusement_park">Amusement Parks</label></li>
+                <li><input type="checkbox" id="aquarium" name="aquarium_cb" value="1" checked><label for="aquarium">Aquariums</label></li>
+                <li><input type="checkbox" id="bowling_alley" name="bowling_alley_cb" checked><label for="bowling_alley">Bowling Alleys</label></li>
+                <li><input type="checkbox" id="casino" name="casino_cb" checked><label for="casino">Casinos</label></li>
+                <li><input type="checkbox" id="courthouse" name="courthouse_cb" checked><label for="courthouse">Courthouses</label></li>
+                <!--<li><input type="checkbox"><label for="Landmarks</li> Not a "Places Type"-->
+                <li><input type="checkbox" id="movie_theater" name="movie_theater_cb" checked><label for="movie_theater">Movie Theaters</label></li>
+                <li><input type="checkbox" id="museum" name="museum_cb" checked><label for="museum">Museums</label></li>
+                <li><input type="checkbox" id="park" name="park_cb" checked><label for="park">Parks</label></li>
+                <li><input type="checkbox" id="university" name="university_cb" checked><label for="university">Universities</label></li>
+                <li><input type="checkbox" id="zoo" name="zoo_cb" checked><label for="zoo">Zoos</label></li>
+            </ul>
+            <h3>Food & Drink</h3>
+            <ul>
+                <li><input type="checkbox" id="bakery" name="bakery_cb" checked><label for="bakery">Bakeries</label></li>
+                <li><input type="checkbox" id="bar" name="bar_cb" checked><label for="bar">Bars</label></li>
+                <!--<li><input type="checkbox"><label for="Breweries</li> Not a "Places Type"-->
+                <li><input type="checkbox" id="cafe" name="cafe_cb" checked><label for="cafe">Cafes</label></li>
+                <!--<li><input type="checkbox"><label for="Distilleries</li> Not a "Places Type"-->
+                <li><input type="checkbox" id="restaurant" name="restaurant_cb" checked><label for="restaurant">Restaurants</label></li>
+            </ul>
+            <h3>Shopping</h3>
+            <ul>
+                <li><input type="checkbox" id="art_gallery" name="art_gallery_cb" checked><label for="art_gallery">Art Galleries</label></li>
+                <li><input type="checkbox" id="bicycle_store" name="bicycle_store_cb" checked><label for="bicycle_store">Bicycle Shops</label></li>
+                <li><input type="checkbox" id="book_store" name="book_store_cb" checked><label for="book_store">Book Stores</label></li>
+                <li><input type="checkbox" id="shopping_mall" name="shopping_mall_cb" checked><label for="shopping_mall">Shopping Malls</label></li>
+            </ul>
+        </div>
+
+    </form>
+    <div class="centered">
+
+        <input type="submit" onclick="parseBoxes()" class="btn" value="Generate">
+    </div>
+
+
+    <div id="test-panel" class="centered">
       <h2>Results</h2>
       <ul id="places">
       </ul>
       <input type="submit" id="more" class="btn" value="Show More">
     </div>
-    <input type="text" id="field1" value="store">
-    <input type="submit" onclick="initMap(document.getElementById('lat'),document.getElementById('lat'),document.getElementById('field1').value)" class="btn" value="Search">
+
     <br>
-    
-    <!-- Tabbed space for History and captures--> 
+      <div id="location" hidden="true"></div>
+      <div id="currentCity" hidden="true"></div>
+
+      <p id="lat"></p>
+      <p id="lng"></p>
+      <br>
+
+      <p id="demo"></p>
+      <div id="map"></div>
+      <!-- Tabbed space for History and captures-->
     
     <!--         <div class="Tripsbutton">Create a Trip</div>
         <div class="Tripsbutton">Generate Random Trip</div>
         <div class="Tripsbutton">Trip History</div>
 --> 
-    
-  </section>
+
 </main>
 </body>
 </html>

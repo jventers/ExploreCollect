@@ -9,24 +9,16 @@
 	function initMap() {
 
         var windowLocation = window.location;
-        console.log(windowLocation);
+
         var myValue = windowLocation["search"];
-        console.log(myValue);
+
         var ID = myValue.split("=");
-        console.log(ID);
+
         var placeId = ID[1];
-        console.log(placeId);
 
-
-
-//		var latitude = 46.876973;
-//		var longitude = -114.016406;
         var latitude;
         var longitude;
-	//	var destLatLong = {
-	//		lat: latitude,
-	//		lng: longitude
-	//};
+
 
 
 
