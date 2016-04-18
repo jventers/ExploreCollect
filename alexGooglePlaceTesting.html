@@ -36,7 +36,7 @@
 			$(".header").load("header.html"); 
 		});
 	</script>
-    <script>
+ <!--   <script>
         function parseBoxes(){
             var ul = document.getElementById("first_list");
             var items = ul.getElementsByTagName("li");
@@ -51,6 +51,33 @@
 
             //initMap(getCoordinates(), document.getElementById('park').name);
         }
+    </script> -->
+    <script>
+        function parseBoxes(){
+
+            var ul = document.getElementById("first_list");
+            var items = ul.getElementsByTagName("li");
+            var coords = getCoordinates();
+
+            items.forEach(function(i){}
+                function checkFlag() {
+                    if (getFlag() == false) {
+                        window.setTimeout(checkFlag, 100);
+                        /* this checks the flag every 100 milliseconds*/
+                    } else {
+                        console.log(item[i].firstChild.checked);
+                        if (items[i].firstChild.value)
+                            console.log(item[i].firstChild.id);
+                        initMap(coords, item[i].firstChild.id);
+                        // do something with items[i], which is a <li> element
+                    }
+                }
+
+                checkFlag();
+        )}
+
+
+
     </script>
     </head>
 <body>
