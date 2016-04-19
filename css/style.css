@@ -681,14 +681,15 @@ div.dateRange {
 	min-height: 200px;
     max-height: 1000px;
 }
-input[type=date] {
+input[type=text].firstDate, input[type=text].secondDate {
 	background-color: #000;
 	color: #fff;
 	padding: .5rem;
-	width: 5rem;
+	width: 7rem;
 	margin-bottom: 1rem;
 	border: 2px solid #aaa;
 	font-size: 1rem;
+	z-index: 100;
 }
 div.dateRange p {
 	margin: .5rem 0;

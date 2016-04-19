@@ -2,9 +2,8 @@
 
 /*-------------Initialize DatePicker-------------*/
 
-$('.firstDate, .secondDate').datepicker( $.datepicker.regional[ "" ] );
 	  
-	  $('.firstDate, .secondDate').datepicker({
+/*	  $('.firstDate, .secondDate').datepicker({
 		maxDate: '+12m',
 		beforeShow: function(input) {
 	    $(input).css('background-color','#ff0');
@@ -21,7 +20,7 @@ $('.firstDate, .secondDate').datepicker( $.datepicker.regional[ "" ] );
 	    $(this).css('background-color','');
 	  }
 	  });
-
+*/
 
 var firstDate = $('.firstDate').datepick('getDate');
 var secondDate = $('.secondDate').datepick('getDate');
@@ -38,3 +37,7 @@ function addEvents() {
     
     eventBox.appendChild(newElement);
 }
+
+ $(document).ready(function() {
+	 $('.firstDate, .secondDate').datepicker();
+ });
