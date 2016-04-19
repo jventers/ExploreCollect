@@ -22,8 +22,18 @@
 	  });
 */
 
-var firstDate = $('.firstDate').datepick('getDate');
-var secondDate = $('.secondDate').datepick('getDate');
+//var firstDate = $('.firstDate').datepick('getDate');
+//var secondDate = $('.secondDate').datepick('getDate');
+
+var firstDate = $(function() {
+	$( "#start_date" ).datepicker();
+});
+
+
+var secondDate = $(function() {
+	$( "#end_date" ).datepicker();
+});
+
 
 /*-------------Events-------------*/ 
 function addEvents() {

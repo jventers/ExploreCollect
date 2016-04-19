@@ -21,6 +21,8 @@
 <script>
     google.load("jquery", "1.4.1");
 </script>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <!-- Load JQuery DatePicker -->
 <link rel="stylesheet" type="text/css" href="css/jquery.datepick.css"> 
 <script type="text/javascript" src="js/jquery.plugin.js"></script> 
@@ -37,6 +39,7 @@
 			$(".header").load("header.html"); 
 		});
 	</script>
+
 </head>
 
 <body>
@@ -56,9 +59,9 @@
       </select>
       <h2>Between:</h2>
       <div class="dateRange">
-        <input type="text" class="firstDate">
+        <input id="start_date" type="text" class="firstDate">
         <p>and</p>
-        <input type="text" class="secondDate">
+        <input id="end_date" type="text" class="secondDate">
          <input type="submit" value="Filter" class="btn">
       </div>
      
