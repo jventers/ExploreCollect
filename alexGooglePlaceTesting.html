@@ -94,13 +94,14 @@
 <body>
 <header class="header"></header>
 <main class="container">
+<section class="content">
     <form>
-        <div id="checkboxList">
-            <h3>Options and Settings</h3>
-
-            <li><input type="text" id="num_stops" value="5" size="2"><label for="num_stops"> Number of stops</label></li>
-            <li><input type="text" id="radius" value="10" size="2"><label for="radius"> Max distance to travel</label></li>
-
+      
+            <h2>Number of Stops:</h2>
+            <input type="text" id="num_stops" value="5" size="2">
+            <h2>Maximum Distance:</h2>
+            <input type="text" id="radius" value="10" size="2">
+  <div id="checkboxList">
             <h3>Entertainment & Sight-Seeing</h3>
             <ul id="first_list">
                 <li><input type="checkbox" id="amusement_park" name="amusement_park_cb" value="1" checked><label for="amusement_park">Amusement Parks</label></li>
@@ -152,7 +153,7 @@
         <div class="Tripsbutton">Generate Random Trip</div>
         <div class="Tripsbutton">Trip History</div>
 --> 
-
+</section>
 </main>
 </body>
 </html>

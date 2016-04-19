@@ -264,7 +264,15 @@ input[type="checkbox"]:checked + label:before {
   text-align: center;
   font-weight: 900;
 }
-
+/*------------------Input Boxes------------------*/
+input[type=text]{
+	background-color: #000;
+	color: #fff;
+	padding: .5rem;
+	margin-bottom: 1rem;
+	border: 2px solid #aaa;
+	font-size: 1rem;
+}
 /*------------------Thumbs Up/Down Radio Buttons------------------*/
 
 input[type="radio"] {
@@ -488,9 +496,7 @@ div.expandCollapse {
 #checkboxList ul {
 	margin: 0;
 	list-style: none;
-	
 }
-
 /*------------------FontAwesome------------------*/
 .fa {
 	color: #FFF;
@@ -501,7 +507,6 @@ div.expandCollapse {
 .fa-twitter-square:hover {
 	color: #505050;
 }
-
 /*-----------------Profile Page-------------------*/
 .firstProfileArea {
 	display: -webkit-flex; /* Safari */
@@ -543,6 +548,8 @@ div.expandCollapse {
 	width: 165px;	
 	text-align: center;
 }
+
+/*------------------Tabs------------------*/
 .tabs input[type=radio] {
 	position: absolute;
 	top: -9999px;
@@ -633,7 +640,6 @@ select.dropDown {
 	-webkit-appearance:menulist; /* Safari and Chrome */
 	appearance:menulist;
 }
-
 div.dateRange {
 	display: -webkit-flex; /* Safari */
     -webkit-justify-content: space-between; /* Safari 6.1+ */
@@ -647,19 +653,12 @@ div.dateRange {
     max-height: 1000px;
 }
 input[type=text].firstDate, input[type=text].secondDate {
-	background-color: #000;
-	color: #fff;
-	padding: .5rem;
 	width: 7rem;
-	margin-bottom: 1rem;
-	border: 2px solid #aaa;
-	font-size: 1rem;
 	z-index: 100;
 }
 div.dateRange p {
 	margin: .5rem 0;
 }
-
 /*------------------Trips------------------*/
 .tripHistory {
 	border: 2px solid #aaa;
