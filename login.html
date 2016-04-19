@@ -34,20 +34,20 @@
       <div class="content">
       
     <h2>Login</h2>
-    
     <form action="Login" method="get" class="loginForm">
-        <input type="email" id="emailLogin" placeholder="Email" size="30"/><label id="message1" style="color:red"></label>
-        <input type="password" id="passwordLogin" name="password" size="30" placeholder="Password" /><label id="message2" style="color:red"></label>
+    	<label id="message1" style="color:red"></label>
+        <input type="email" id="emailLogin" placeholder="Email" size="30" required>
+        <label id="message2" style="color:red"></label>
+        <input type="password" id="passwordLogin" name="password" size="30" placeholder="Password" required>
 
 	<div class="forgetSubmitRow">
 		<a href="#">Forget Password?</a>
           
-        <input type="submit" value="Submit" class="btn loginBtn" formaction="index.html"/>
+        <input type="submit" value="Login" class="btn loginBtn" formaction="index.html">
 	</div>
-
 	<div class="externalLogin">
-    <button class="facebookLogin"><i class="fa fa-facebook fa-3x"></i>Login with Facebook</button>
-    <button class="googleLogin"><i class="fa fa-google-plus fa-3x"></i>Login with Google</button>
+    <button class="facebookLogin"><i class="fa fa-facebook fa-3x"></i> Login with Facebook</button>
+    <button class="googleLogin"><i class="fa fa-google-plus fa-3x"></i> Login with Google</button>
 	</div>
 
         </form>
