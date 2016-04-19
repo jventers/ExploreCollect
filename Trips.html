@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
-    <<head>
+    <head>
 	<!-- DO NOT REMOVE. THIS DEFINES THE CHARACTER SET-->
     <meta charset="utf-8">
     <!-- Backwards compatibility for IE. This display the page in edge mode: the highest mode supported by IE 6 - 11 -->
@@ -34,21 +34,8 @@
 		$(function(){
 			$(".header").load("header.html"); 
 		});
-    <!-- Load tabs-->
-    $(function() {
-      $( "#tabs" ).tabs();
-    });
 	</script>
-  <!-- tab header styles-->
-  <style>
-         #tabs{font-size: 20px;}
-         .ui-widget-header {
-            background:#505050;
-            border: 2px solid #505050;
-            color: #000000;
-            font-weight: bold;
-         }
-  </style>
+ 
 	</head>
 
     <body>
@@ -56,21 +43,23 @@
 <main class="container">
       <section class="content">  
       
-        <p class="date" id="date"></p>
+     <!--   <p class="date" id="date"></p>
           <script>
           var d = new Date();
           document.getElementById("date").innerHTML = d.toDateString();
-          </script>  
+          </script>  -->
         <!-- Tabbed space for History and captures-->
-        <div class="Tripsbutton">Create a Trip</div>
-        <div class="Tripsbutton">Generate Random Trip</div>
-        <div class="Tripsbutton">Trip History</div>
-      
+        <p>Trips allow you to create an itinerary of places to visit.</p>
+        <div class="tripButtons">
+        <a class="btn">Create Your Own Trip</a>
+        <a class="btn">Generate a Random Trip</a>
+        </div>
+        <h2>Trip History</h2>
+      	<div class="tripHistory">
+        
+        </div>
          
-      
-         
-      
-      </div>
+  
       </section>
 
        </main>
