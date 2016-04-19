@@ -5,16 +5,21 @@
 var map;
 var searchResults;
 var flag = true;
+var stops = [];
+var num_stops = 0;
 
-function initMap(coords, searchParam) {
 
+
+
+function initMap(coords, searchParam,numDest) {
+    num_stops = numDest;
     flag = true;
     var myLocation = coords;
 
     map = new google.maps.Map(document.createElement('div'));
 
 
-
+console.log('searching');
     var service = new google.maps.places.PlacesService(map);
     service.nearbySearch({
         location: myLocation,
@@ -23,69 +28,46 @@ function initMap(coords, searchParam) {
     }, processResults);
 }
 
-function processResults(results, status, pagination) {
+function processResults(results, status) {
     if (status !== google.maps.places.PlacesServiceStatus.OK) {
         return;
     } else {
 
         searchResults = results;
 
-
-        // searchResults.forEach(function(item) {
-        //     console.log(item.name);
-        // });
-
-        document.createElement('div');
-
-        var placesList = document.getElementById('bars');
-
-        //for (var i = 0, place; place = results[i]; i++) {
-        //
-        //    console.log(place);
-        //    var node = document.createElement("h4");
-        //    node.className = "location";
-        //    var myLink = "location-detail.html?User_Id=" + place.place_id;
-        //    node.innerHTML = '\<a href=' + myLink + '\>' + place.name + '\</a>';
-        //    placesList.appendChild(node); // += '<li>' + place.name + '</li>';
-        //
-        //}
-        //        console.log(searchResults);
-
-           if (pagination.hasNextPage) {
-               var moreButton = document.getElementById('more');
-
-               moreButton.disabled = false;
-
-               moreButton.addEventListener('click', function() {
-                   moreButton.disabled = true;
-                   pagination.nextPage();
-               });
-           }
         var resultList = document.getElementById('resultsList');
+//        var usedIndexes = [];
 
-        for (var j = 0, result; result = results[j]; j++) {
+        //for (i = 0; i < num_stops; i++) {
+        //
+        //    var index = Math.floor((Math.random() * searchResults.length) + 1);
+        //
+        //    if(searchResults[index] && !index in usedIndexes) {
+        //        stops.push(searchResults[index]);
+        //
+        //    }
+        //}
 
-            console.log(result);
+
+        for (var j = 0, stop; stop = results[j]; j++) {
+
+            //console.log(stop);
             var node = document.createElement("h4");
             node.className = "location";
-            var myLink = "location-detail.html?User_Id=" + result.place_id;
-            node.innerHTML = '\<a href=' + myLink + '\>' + result.name + '\</a>';
-            resultList.appendChild(node); // += '<li>' + place.name + '</li>';
+            var myLink = "location-detail.html?User_Id=" + stop.place_id;
+            node.innerHTML = '\<a href=' + myLink + '\>' + stop.name + '\</a>';
+            resultList.appendChild(node);
 
         }
-               //var placesList = document.getElementById('places');
-               //
-               //for (var i = 0, place; place = results[i]; i++) {
-               //
-               //    placesList.innerHTML += '<li>' + place.name + '</li>';
-               //
-               //}
-      //     var test = document.getElementById('demo').innerHTML='testing: ' + searchResults[0].name;
+
 
 flag = false;
     }
 }
 
+function getStops(){
+    return stops;
+}
 
 function getFlag(){
     return flag;

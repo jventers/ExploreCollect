@@ -52,59 +52,43 @@
             //initMap(getCoordinates(), document.getElementById('park').name);
         }
     </script> -->
-    <!--    <script>
+        <script>
+            var coords;
+
            function parseBoxes(){
 
                var ul = document.getElementById("first_list");
                var items = ul.getElementsByTagName("li");
-               var coords = getCoordinates();
 
-               items.forEach(
-                       function(item){
-                           function checkFlag() {
-                               if(getFlag() == false) {
-                                   window.setTimeout(checkFlag, 100); /* this checks the flag every 100 milliseconds*/
-                               } else {
-                                   console.log(item.firstChild.checked);
-                                   if (item.firstChild.value)
-                                       console.log(item.firstChild.id);
-                                   initMap(coords, item.firstChild.id);
-                                   // do something with items[i], which is a <li> element
-                               }
-                           }
-                           checkFlag();
 
-                       })
-           }
-       </script> -->
-       <script>
-           function parseBoxes() {
-
-               var ul = document.getElementById("first_list");
-               var items = ul.getElementsByTagName("li");
-               var coords = getCoordinates();
+               if(!coords){
+                   coords = getCoordinates();
+               }
 
                for (var i = 0; i < items.length; ++i) {
 
-                   function checkFlag(ul,i) {
-                       if (getFlag() == false) {
-                           window.setTimeout(checkFlag(items,i), 100);
-                           /* this checks the flag every 100 milliseconds*/
-                       } else {
-                           console.log(ul[i].firstChild.checked);
-                           if (ul[i].firstChild.value)
-                               console.log(ul[i].firstChild.id);
-                           initMap(coords, ul[i].firstChild.id);
-                           // do something with items[i], which is a <li> element
+                           function checkFlag(item,i) {
+                               if(getFlag() == false) {
+//                                   checkFlag(items,i);
+                                   window.setTimeout(checkFlag, 100); /* this checks the flag every 100 milliseconds*/
+                               } else {
+
+                                   if (item[i].firstChild.checked) {
+                                       console.log(item[i].firstChild.id);
+                                       initMap(coords, item[i].firstChild.id);
+                                       // do something with items[i], which is a <li> element
+                                       console.log(item[i].firstChild.checked);
+                                   }
+                                   else{
+                                       console.log('not searching');
+                                   }
+                                   }
+                           }
+                           checkFlag(items,i);
+
                        }
-                   }
 
-                   checkFlag(items,i);
-               }
            }
-
-
-
        </script>
     </head>
 <body>
@@ -131,22 +115,7 @@
                 <li><input type="checkbox" id="university" name="university_cb" checked><label for="university">Universities</label></li>
                 <li><input type="checkbox" id="zoo" name="zoo_cb" checked><label for="zoo">Zoos</label></li>
             </ul>
-            <h3>Food & Drink</h3>
-            <ul>
-                <li><input type="checkbox" id="bakery" name="bakery_cb" checked><label for="bakery">Bakeries</label></li>
-                <li><input type="checkbox" id="bar" name="bar_cb" checked><label for="bar">Bars</label></li>
-                <!--<li><input type="checkbox"><label for="Breweries</li> Not a "Places Type"-->
-                <li><input type="checkbox" id="cafe" name="cafe_cb" checked><label for="cafe">Cafes</label></li>
-                <!--<li><input type="checkbox"><label for="Distilleries</li> Not a "Places Type"-->
-                <li><input type="checkbox" id="restaurant" name="restaurant_cb" checked><label for="restaurant">Restaurants</label></li>
-            </ul>
-            <h3>Shopping</h3>
-            <ul>
-                <li><input type="checkbox" id="art_gallery" name="art_gallery_cb" checked><label for="art_gallery">Art Galleries</label></li>
-                <li><input type="checkbox" id="bicycle_store" name="bicycle_store_cb" checked><label for="bicycle_store">Bicycle Shops</label></li>
-                <li><input type="checkbox" id="book_store" name="book_store_cb" checked><label for="book_store">Book Stores</label></li>
-                <li><input type="checkbox" id="shopping_mall" name="shopping_mall_cb" checked><label for="shopping_mall">Shopping Malls</label></li>
-            </ul>
+
         </div>
 
     </form>
