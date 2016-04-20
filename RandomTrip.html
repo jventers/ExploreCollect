@@ -1,144 +1,159 @@
 <!doctype html>
 <html>
-    <<head>
-	<!-- DO NOT REMOVE. THIS DEFINES THE CHARACTER SET-->
+<head>
+    <!-- DO NOT REMOVE. THIS DEFINES THE CHARACTER SET-->
     <meta charset="utf-8">
     <!-- Backwards compatibility for IE. This display the page in edge mode: the highest mode supported by IE 6 - 11 -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Set the width of the page to the screen-width of the device -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Page title-->
-    <title>Trips</title>
+    <title>Random Trip</title>
     <!-- Link to styles here -->
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <!-- Link to font-awesome -->
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <!-- Link to Open Sans font -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:600;400;300" rel="stylesheet" type="text/css">
     <!-- Load JavaScript -->
-	<script src="http://www.google.com/jsapi"></script>
+    <script src="http://www.google.com/jsapi"></script>
     <!-- Load JQuery -->
-	<script>
-		google.load("jquery", "1.4.1");
+    <script>
+        google.load("jquery", "1.4.1");
     </script>
-      
-    
+    <!-- Load Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaWY5QH4ObetGu6TxKARoUpxWggHtJoiE&libraries=places"></script>
     <!-- Include our scripts -->
-	<script src="scripts/app.js"></script>
-   
+    <script src="scripts/app.js"></script>
+    <script src="scripts/geo.js"></script>
+    <script src="scripts/randomSearch.js"></script>
     <!-- Description and Keywords-->
     <meta name="description" content="INSERT DESCRIPTION HERE">
-  	<meta name="keywords" content="INSERT KEYWORDS HERE">
+    <meta name="keywords" content="INSERT KEYWORDS HERE">
     <!-- Load header-->
-	<script>
-		$(function(){
-			$(".header").load("header.html"); 
-		});
-//    <!-- Load tabs-->
-//    $(function() {
-//      $("#tabs").tabs();
-//    });
-	</script>
-  <!-- tab header styles-->
-  <style>
-         #tabs{font-size: 20px;}
-         .ui-widget-header {
-            background:#505050;
-            border: 2px solid #505050;
-            color: #000000;
-            font-weight: bold;
-         }
-  </style>
-        <style>
-            #right-panel {
-                font-family: 'Roboto','sans-serif';
-                line-height: 30px;
-                padding-left: 10px;
+    <script>
+        $(function(){
+            $(".header").load("header.html");
+        });
+    </script>
+    <!--   <script>
+           function parseBoxes(){
+               var ul = document.getElementById("first_list");
+               var items = ul.getElementsByTagName("li");
+               var coords = getCoordinates();
+               for (var i = 0; i < items.length; ++i) {
+                   console.log(items[i].firstChild.checked);
+                   if(items[i].firstChild.value)
+                   console.log(items[i].firstChild.id);
+                   initMap(coords, items[i].firstChild.id);
+                   // do something with items[i], which is a <li> element
+               }
+
+               //initMap(getCoordinates(), document.getElementById('park').name);
+           }
+       </script> -->
+    <script>
+        var coords;
+
+        function parseBoxes(){
+
+            var ul = document.getElementById("first_list");
+            var items = ul.getElementsByTagName("li");
+
+
+            if(!coords){
+                coords = getCoordinates();
             }
 
-            #right-panel select, #right-panel input {
-                font-size: 15px;
+            for (var i = 0; i < items.length; ++i) {
+
+                function checkFlag(item,i) {
+                    if(getFlag() == false) {
+//                                   checkFlag(items,i);
+                        window.setTimeout(checkFlag, 100); /* this checks the flag every 100 milliseconds*/
+                    } else {
+
+                        if (item[i].firstChild.checked) {
+                            console.log(item[i].firstChild.id);
+                            initMap(coords, item[i].firstChild.id);
+                            // do something with items[i], which is a <li> element
+                            console.log(item[i].firstChild.checked);
+                        }
+                        else{
+                            console.log('not searching');
+                        }
+                    }
+                }
+                checkFlag(items,i);
+
             }
 
-            #right-panel select {
-                width: 100%;
-            }
-
-            #right-panel i {
-                font-size: 12px;
-            }
-            #right-panel {
-                font-family: Arial, Helvetica, sans-serif;
-                position: absolute;
-                right: 5%;
-                top: 80%;
-                margin-top: -195px;
-                height: 330px;
-                width: 400px;
-                padding: 5px;
-                z-index: 5;
-                border: 1px solid #999;
-                background: #fff;
-            }
-            h2 {
-                font-size: 22px;
-                margin: 0 0 5px 0;
-            }
-            ul {
-                list-style-type: none;
-                padding: 0;
-                margin: 0;
-                height: 271px;
-                width: 400px;
-                overflow-y: scroll;
-            }
-            li {
-                background-color: #f1f1f1;
-                padding: 10px;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                overflow: hidden;
-            }
-            li:nth-child(odd) {
-                background-color: #fcfcfc;
-            }
-            #more {
-                width: 100%;
-                margin: 5px 0 0 0;
-            }
-        </style>
-	</head>
-    <body>
-    <header class="header"></header>
+        }
+    </script>
+</head>
+<body>
+<header class="header"></header>
 <main class="container">
-      <section class="content">  
-      
-        <p class="date" id="date"></p>
-          <script>
-          var d = new Date();
-          document.getElementById("date").innerHTML = d.toDateString();
-          </script>
+    <section class="content">
+        <form>
 
-        <!-- Tabbed space for History and captures-->
-        <div class="Tripsbutton">Create a Trip</div>
-        <div class="Tripsbutton">Generate Random Trip</div>
-        <div class="Tripsbutton">Trip History</div>
-          <div id="map"></div>
-          <div id="right-panel">
-              <h2>Results</h2>
-              <ul id="places"></ul>
-              <button id="more">More results</button>
+            <h2>Number of Stops:</h2>
+            <input type="text" id="num_stops" value="5" size="2">
+            <h2>Maximum Distance:</h2>
+            <input type="text" id="radius" value="10" size="2">
+            <div id="checkboxList">
+                <h3>Entertainment & Sight-Seeing</h3>
+                <ul id="first_list">
+                    <li><input type="checkbox" id="amusement_park" name="amusement_park_cb" value="1" checked><label for="amusement_park">Amusement Parks</label></li>
+                    <li><input type="checkbox" id="aquarium" name="aquarium_cb" value="1" checked><label for="aquarium">Aquariums</label></li>
+                    <li><input type="checkbox" id="bowling_alley" name="bowling_alley_cb" checked><label for="bowling_alley">Bowling Alleys</label></li>
+                    <li><input type="checkbox" id="casino" name="casino_cb" checked><label for="casino">Casinos</label></li>
+                    <li><input type="checkbox" id="courthouse" name="courthouse_cb" checked><label for="courthouse">Courthouses</label></li>
+                    <!--<li><input type="checkbox"><label for="Landmarks</li> Not a "Places Type"-->
+                    <li><input type="checkbox" id="movie_theater" name="movie_theater_cb" checked><label for="movie_theater">Movie Theaters</label></li>
+                    <li><input type="checkbox" id="museum" name="museum_cb" checked><label for="museum">Museums</label></li>
+                    <li><input type="checkbox" id="park" name="park_cb" checked><label for="park">Parks</label></li>
+                    <li><input type="checkbox" id="university" name="university_cb" checked><label for="university">Universities</label></li>
+                    <li><input type="checkbox" id="zoo" name="zoo_cb" checked><label for="zoo">Zoos</label></li>
+                </ul>
+
             </div>
 
+        </form>
+        <div class="centered">
 
-      </section>
+            <input type="submit" onclick="parseBoxes()" class="btn" value="Generate">
+        </div>
+        <form>
+            <div id="resultsList">
+                <h3>ResultsList</h3>
 
 
+            </div></form>
+        <!-- <div id="test-panel" class="centered">
+           <h2>Results</h2>
+           <ul id="places">
+           </ul>
+           <input type="submit" id="more" class="btn" value="Show More">
+         </div>
+     -->
+        <br>
+        <div id="location" hidden="true"></div>
+        <div id="currentCity" hidden="true"></div>
 
-       </main>
+        <p id="lat"></p>
+        <p id="lng"></p>
+        <br>
 
+        <p id="demo"></p>
+        <div id="map"></div>
+        <!-- Tabbed space for History and captures-->
+
+        <!--         <div class="Tripsbutton">Create a Trip</div>
+            <div class="Tripsbutton">Generate Random Trip</div>
+            <div class="Tripsbutton">Trip History</div>
+    -->
+    </section>
+</main>
 </body>
-<script src="scripts/nearbySearch.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaWY5QH4ObetGu6TxKARoUpxWggHtJoiE&libraries=places&callback=initMap" async></script>
-
 </html>
