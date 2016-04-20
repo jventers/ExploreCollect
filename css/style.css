@@ -652,11 +652,40 @@ div.dateRange {
 }
 input[type=text].firstDate, input[type=text].secondDate {
 	width: 7rem;
-	z-index: 100;
 }
 div.dateRange p {
 	margin: .5rem 0;
 }
+/*------------------DatePicker------------------*/
+.ui-datepicker {
+	background-color: rgba(255,255,255,0.90);
+    width: 8rem;
+    height: auto;
+    margin: 5px auto 0;
+    font: 9pt Arial, sans-serif;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+	
+}
+.ui-datepicker-title {
+	text-align: center;
+	color: #fff;
+}
+.ui-datepicker a {
+    text-decoration: none;
+	font-weight: 600;
+}
+.ui-datepicker table {
+    width: 100%;
+}
+.ui-datepicker-calendar td {
+	text-align: center;
+}
+.ui-datepicker-next {
+	float:right;
+}
+
 /*------------------Trips------------------*/
 .tripHistory {
 	border: 2px solid #aaa;
