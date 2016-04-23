@@ -568,7 +568,7 @@ div.expandCollapse {
 .tabs h2 {
 	margin: 0px;
 }
-.tab-scroll {
+.tab-scroll, .eventBox {
     overflow-y: scroll;
     width: 100%;
 	min-height: 200px;
@@ -577,7 +577,7 @@ div.expandCollapse {
 .tab-scroll ul {
 	padding: 10px;
 }
-.recent-achievements li {
+.recent-achievements li, .event-list li {
 	display: -webkit-flex; /* Safari */
     -webkit-justify-content: flex-start; /* Safari 6.1+ */
     display: flex;
@@ -587,7 +587,7 @@ div.expandCollapse {
 	padding: 10px 0px;
 	border-bottom: 2px solid #fff;
 }
-.recent-achievements img {
+.recent-achievements img, .event-list img {
 	height: 140px;
 	width: 140px;
 	padding-right: 10px;
@@ -598,7 +598,7 @@ div.expandCollapse {
 .recent-achievements p {
 	margin-bottom: 10px;	
 }
-.achievement-details {
+.achievement-details, .event-details {
 	width: 100%;
 }
 .points {
@@ -722,25 +722,39 @@ div.dateRange {
     display: flex;
     justify-content: space-between;	
 }
-#eventBox {
-    overflow-y: scroll;
-    width: 100%;
-	min-height: 200px;
-    max-height: 1000px;
-}
 input[type=text].firstDate, input[type=text].secondDate {
 	width: 7rem;
 }
 div.dateRange p {
 	margin: .5rem 0;
 }
+.eventBox ul {
+	padding: 10px 10px 10px 0;
+}
+.event-list h3 {
+	margin: -8px 0 0 0;
+}
+.event-list p {
+	margin: 10px 0 0 0;	
+}
+p.event-distance {
+	float: right;
+	color: #fff;
+	margin: 0px;
+}
+.form-heading {
+	margin-bottom: 0px;
+}
+
+
 /*------------------DatePicker------------------*/
 .ui-datepicker {
 	background-color: rgba(255,255,255,0.90);
     width: 8rem;
     height: auto;
     margin: 5px auto 0;
-    font: 9pt Arial, sans-serif;
+    font-size: .5rem;
+	font-family: 'Open Sans', Verdana, sans-serif;
     -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
     -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
