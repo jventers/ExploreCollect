@@ -51,3 +51,8 @@ function addEvents() {
  $(document).ready(function() {
 	 $('.firstDate, .secondDate').datepicker();
  });
+
+/*------------CreateEvent------------------*/
+$(document).on('click', '.toggle-btn', function() {
+    $(this).toggleClass('toggle-btn-selected'); 
+});
