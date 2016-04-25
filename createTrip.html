@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+    <!-- DO NOT REMOVE. THIS DEFINES THE CHARACTER SET-->
+    <meta charset="utf-8">
+    <!-- Backwards compatibility for IE. This display the page in edge mode: the highest mode supported by IE 6 - 11 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Set the width of the page to the screen-width of the device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Page title-->
+    <title>Trip Creator</title>
+    <!-- Link to styles here -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Link to font-awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <!-- Link to Open Sans font -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:600;400;300" rel="stylesheet" type="text/css">
+    <!-- Load JavaScript -->
+    <script src="http://www.google.com/jsapi"></script>
+    <!-- Load JQuery -->
+    <script>
+        google.load("jquery", "1.4.1");
+    </script>
+    <!-- Load Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaWY5QH4ObetGu6TxKARoUpxWggHtJoiE&libraries=places"></script>
+    <!-- Include our scripts -->
+    <script src="scripts/app.js"></script>
+    <!-- Include our scripts -->
+    <script src="scripts/home.js"></script>
+    <script src="scripts/geo.js"></script>
+    <script src="scripts/nearbySearch.js"></script>
+    <!-- Description and Keywords-->
+    <meta name="description" content="INSERT DESCRIPTION HERE">
+    <meta name="keywords" content="INSERT KEYWORDS HERE">
+    <!-- Load header-->
+    <script>
+        $(function(){
+            $(".header").load("header.html");
+        });
+    </script>
+</head>
+<body>
+<header class="header"></header>
+<main class="container">
+    <section class="content">
+        <form>
+
+            <div id="checkboxList">
+
+                <ul id="first_list">
+                    <li><label for="stop1">1  University of Montana </label><div style="float: right;margin-right: 15px;"><input type="checkbox" id="stop1" name="stop1"><label for="stop1">Remove</label></div></li>
+                    <li><label for="stop2">2  Caras Park </label><div style="float: right;margin-right: 15px;"><input type="checkbox" id="stop2" name="stop2" ><label for="stop2">Remove</label></div></li>
+                    <li><label for="stop3">3  Missoula Public Library </label><div style="float: right;margin-right: 15px;"><input type="checkbox" id="stop3" name="stop3" ><label for="stop3">Remove</label></div></li>
+                    <li><label for="stop4">4  Tamarack </label><div style="float: right;margin-right: 15px;"><input type="checkbox" id="stop4" name="stop4" ><label for="stop4">Remove</label></div></li>
+                    <li><label for="stop5">5  Downtown Farmers Market </label><div style="float: right;margin-right: 15px;"><input type="checkbox" id="stop5" name="stop5" ><label for="stop5">Remove</label></div></li>
+                    <li><label for="stop6">6  Another example </label><div style="float: right;margin-right: 15px;"><input type="checkbox" id="stop6" name="stop6" ><label for="stop6">Remove</label></div></li>
+                    <li><label for="stop7">7  Yet another example </label><div style="float: right;margin-right: 15px;"><input type="checkbox" id="stop7" name="stop7" ><label for="stop7">Remove</label></div></li>
+                    <li><label for="stop8">8  I am not good at examples </label><div style="float: right;margin-right: 15px;"><input type="checkbox" id="stop8" name="stop8" ><label for="stop8">Remove</label></div></li>
+
+                </ul>
+
+            </div>
+
+        </form>
+
+
+<!--                <a href="#" id="editHome">Edit</a> -->
+
+                <div class="cities">
+                    <div class="expandCollapse">
+                        <div class="myProgress">
+                            <div class="myBar">
+                                <h2 id="currentCity" class="city"></h2>
+                                <p class="percentage">0%</p>
+                            </div> <!-- End myBar -->
+                        </div> <!-- End myProgress -->
+                    </div> <!-- End expandCollapse -->
+                    <div class="showHide">
+                        <div class="expandCollapse">
+                            <div class="myProgress">
+                                <div class="myBar">
+                                    <h3 class="category">Parks</h3>
+                                    <p class="percentage">0%</p>
+                                </div> <!-- End myBar -->
+                            </div> <!-- End myProgress -->
+                        </div> <!-- End expandCollapse -->
+                        <div id="bars" class="showHide">
+
+
+                            <!-- THIS IS AN EXAMPLE OF WHAT GETS LOADED HERE
+                            <h4 class="location"><a href="location-detail.html">The Rhino</a></h4> -->
+
+                        </div> <!-- End expandCollapse -->
+
+                    </div> <!-- End showHide -->
+                </div> <!-- End Cities -->
+
+
+        <div class="centered">
+            <br>
+            <input style="float: left;margin-right: 15px;" type="submit" onclick="initMap(getCoordinates(),'park')" class="progressUpdate btn" value="Update List">
+            <input style="margin-top: 1rem;" type="submit" onclick="" class="btn" value="Search">
+            <input style="margin-top: 1rem;float: right;margin-right: 15px;" type="submit" onclick="" class="btn" value="Begin Trip">
+        </div>
+        <div id="addLocArea">
+            <p id="locMsg"></p>
+
+        </div>
+        <div hidden="false" id="location"></div>
+
+        <!-- Tabbed space for History and captures-->
+
+        <!--         <div class="Tripsbutton">Create a Trip</div>
+            <div class="Tripsbutton">Generate Random Trip</div>
+            <div class="Tripsbutton">Trip History</div>
+    -->
+    </section>
+</main>
+</body>
+</html>

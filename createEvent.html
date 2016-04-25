@@ -54,15 +54,27 @@
   <main class="container">
     <section class="content"> 
       <form>
+<<<<<<< HEAD
       
       <h3>Start Time:</h3><input type="text" id="starttime" data-format="HH:mm" data-template="HH : mm" name="starttime"><br>
       <h3>End Time:</h3><input type="text" id="endtime" data-format="HH:mm" data-template="HH : mm" name="endtime"><br>
+=======
+      <h2 class="form-heading" maxlength="40">Event Name:</h2>
+      <input type="text" class="eventname">
+      <h2 class="form-heading">Event Date:</h2>
+      <input id="start_date" type="text" class="firstDate">
+      <h2 class="form-heading">Start Time:</h2>
+      <input type="text" class="time-selector" id="starttime" data-format="HH:mm" data-template="HH : mm" name="starttime">
+      <h2 class="form-heading">End Time:</h2>
+      <input type="text" class="time-selector" id="endtime" data-format="HH:mm" data-template="HH : mm" name="endtime">
+>>>>>>> 8c73a8dce1dfdedf023a628b34b6dfa7451a03ca
       <script>
-        $('input').combodate({
+        $('.time-selector').combodate({
           minuteStep: 15
         });
         
         </script>
+<<<<<<< HEAD
         <h3>Event Date:</h3><br>
       <input id="start_date" type="text" class="firstDate"><br>
       <h3>Event Name:</h3><br>
@@ -74,10 +86,18 @@
       <h3>Attach Image:</h3><br>
       <input type="file" name="pic" accept="image/*" id="imageupload">
       <input type="submit" value="Upload"><br>
+=======
+>>>>>>> 8c73a8dce1dfdedf023a628b34b6dfa7451a03ca
       
-      <form>
       
-      <h3>Tags relevant to your event:</h3>      
+      <h2 class="form-heading">Description:</h2>
+      <textarea rows="7" cols="40" maxlength="400"></textarea>
+      <h2 class="form-heading">Location:</h2>
+        <input id="locationTextField" type="text">
+      <h2 class="form-heading">Attach Image:</h2>
+      <input type="file" name="pic" accept="image/*">
+      
+      <h2 class="form-heading">Tags relevant to your event:</h2>      
       
   <div id="tagList">
     <h3>Entertainment & Sight-Seeing</h3>
@@ -131,15 +151,23 @@
     </ul>
   </div>
     <div class="centered">
-    <h3>Invite Only?</h3><br>
+    <h2 class="form-heading">Invite Only?</h2>
     <a class="toggle-btn">
     <button></button>
-    </a>
+    </a><br/><br/>
 
     
-     </div>   
-     </form>
+     
+     
      <input type="submit" onclick="createEvent()" class="btn" value="Create Event">
+<<<<<<< HEAD
      <input type="submit" onclick="inviteFriends()" class="btn" value="Invite Friends">
+=======
+     </div>  
+     </form>
+     
+     </section>
+     </main>
+>>>>>>> 8c73a8dce1dfdedf023a628b34b6dfa7451a03ca
 </body>
 </html>
