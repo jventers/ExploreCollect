@@ -2,7 +2,7 @@
 $(function() {
 
 var $slideshow = $('#slideshow');
-var $allPics = $slideshow.find('#allPics');
+var $allPics = $slideshow.find('.allPics');
 var $pic = $allPics.find('.pictureFrame');
 var animationSpeed = 250;
 var currentSlide = 1;
