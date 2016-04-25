@@ -790,6 +790,7 @@ p.event-distance {
 	margin-bottom: 0px;
 }
 
+<<<<<<< HEAD
 /*-----------------CreateEvent------------------*/
 
 .eventname {
@@ -818,6 +819,8 @@ p.event-distance {
 	list-style: none;
 }
 
+=======
+>>>>>>> dd856bb3e5a9726210c69109f97a5f6147dd6fd6
 
 /*------------------DatePicker------------------*/
 .ui-datepicker {

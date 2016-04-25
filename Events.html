@@ -1,57 +1,55 @@
 <!doctype html>
 <html>
-<head>
-<!-- DO NOT REMOVE. THIS DEFINES THE CHARACTER SET-->
-<meta charset="utf-8">
-<!-- Backwards compatibility for IE. This display the page in edge mode: the highest mode supported by IE 6 - 11 -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<!-- Set the width of the page to the screen-width of the device -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Page title-->
-<title>Events</title>
-<!-- Link to styles here -->
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<!-- Link to font-awesome -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-<!-- Link to Open Sans font -->
-<link href="http://fonts.googleapis.com/css?family=Open+Sans:600;400;300" rel="stylesheet" type="text/css">
-<!-- Load JavaScript -->
-<script src="http://www.google.com/jsapi"></script>
-<!-- Load JQuery -->
-<script>
+	<head>
+	<!-- DO NOT REMOVE. THIS DEFINES THE CHARACTER SET-->
+	<meta charset="utf-8">
+	<!-- Backwards compatibility for IE. This display the page in edge mode: the highest mode supported by IE 6 - 11 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- Set the width of the page to the screen-width of the device -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Page title-->
+	<title>Events</title>
+	<!-- Link to styles here -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- Link to font-awesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	<!-- Link to Open Sans font -->
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:600;400;300" rel="stylesheet" type="text/css">
+	<!-- Load JavaScript -->
+	<script src="http://www.google.com/jsapi"></script>
+	<!-- Load JQuery -->
+	<script>
     google.load("jquery", "1.4.1");
 </script>
+	<script src="scripts/jquery-1.10.2.js"></script>
+	<script src="scripts/jquery-ui.js"></script>
 
-<script src="scripts/jquery-1.10.2.js"></script>
-<script src="scripts/jquery-ui.js"></script>
+	<!-- Load JQuery DatePicker -->
 
-  <!-- Load JQuery DatePicker -->
-
-<!--<script type="text/javascript" src="js/jquery.plugin.js"></script>
+	<!--<script type="text/javascript" src="js/jquery.plugin.js"></script>
 <script type="text/javascript" src="js/jquery.datepick.js"></script>
 -->
-<!-- Include our scripts -->
-<script src="scripts/app.js"></script>
-<script src="scripts/events.js"></script>
-<!-- Description and Keywords-->
-    <meta name="description" content="INSERT DESCRIPTION HERE">
-    <meta name="keywords" content="INSERT KEYWORDS HERE">
-    <!-- Load header-->
+	<!-- Include our scripts -->
+	<script src="scripts/app.js"></script>
+	<script src="scripts/events.js"></script>
+	<!-- Description and Keywords-->
+	<meta name="description" content="INSERT DESCRIPTION HERE">
+	<meta name="keywords" content="INSERT KEYWORDS HERE">
+	<!-- Load header-->
 	<script>
 		$(function(){
 			$(".header").load("header.html"); 
 		});
 	</script>
+	</head>
 
-</head>
-
-<body>
+	<body>
 <header class="header"></header>
 <main class="container">
-  <section class="content">
+      <section class="content">
     <form>
-      <h2>Show Events Within:</h2>
-      <select class="dropDown">
+          <h2 class="form-heading">Show Events Within:</h2>
+          <select class="dropDown">
         <option value="5">5 Miles</option>
         <option value="10">10 Miles</option>
         <option value="15">15 Miles</option>
@@ -60,19 +58,47 @@
         <option value="75">75 Miles</option>
         <option value="100">100 Miles</option>
       </select>
-      <h2>Between:</h2>
-      <div class="dateRange">
+          <h2  class="form-heading">Between:</h2>
+          <div class="dateRange">
         <input id="start_date" type="text" class="firstDate">
         <p>and</p>
         <input id="end_date" type="text" class="secondDate">
-         <input type="submit" value="Filter" class="btn">
+        <input type="submit" value="Filter" class="btn">
       </div>
-     
-    </form>
-    <div id="eventBox">
-    <img src="images/event-sample.jpg" width="100%">
-    </div>
+        </form>
+    <div class="eventBox">
+          <ul class="event-list">
+        <li> <img src="images/music-notes.jpg">
+              <div class="event-details">
+            <h3>Missoula Music Showcase</h3>
+            <p>9:00 PM at The Badlander</p>
+            <p class="event-distance">3.2 mi</p>
+          </div>
+            </li>
+        <li> <img src="images/music-notes.jpg">
+              <div class="event-details">
+            <h3>Off in the Woods</h3>
+            <p>6:00 PM at The Top Hat</p>
+            <p class="event-distance">3 mi</p>
+          </div>
+            </li>
+        <li> <img src="images/food-icon.jpg">
+              <div class="event-details">
+            <h3>Montana Blind Beer Tasting</h3>
+            <p>12:00 PM at The Rhino</p>
+            <p class="event-distance">2.8 mi</p>
+          </div>
+            </li>
+        <li> <img src="images/food-icon.jpg">
+              <div class="event-details">
+            <h3>Bacon n' Beer Brunch</h3>
+            <p>10:00 AM at Draught Works Brewery</p>
+            <p class="event-distance">3 mi</p>
+          </div>
+            </li>
+      </ul>
+        </div>
   </section>
-</main>
+    </main>
 </body>
 </html>

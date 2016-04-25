@@ -1,34 +1,34 @@
 <!doctype html>
 <html>
-    <head>
+	<head>
 	<!-- DO NOT REMOVE. THIS DEFINES THE CHARACTER SET-->
-    <meta charset="utf-8">
-    <!-- Backwards compatibility for IE. This display the page in edge mode: the highest mode supported by IE 6 - 11 -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Set the width of the page to the screen-width of the device -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Page title-->
-    <title>Profile</title>
-    <!-- Link to styles here -->
+	<meta charset="utf-8">
+	<!-- Backwards compatibility for IE. This display the page in edge mode: the highest mode supported by IE 6 - 11 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- Set the width of the page to the screen-width of the device -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Page title-->
+	<title>Profile</title>
+	<!-- Link to styles here -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-    <!-- Link to font-awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-    <!-- Link to Open Sans font -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:600;400;300" rel="stylesheet" type="text/css">
-    <!-- Load JavaScript -->
+	<!-- Link to font-awesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	<!-- Link to Open Sans font -->
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:600;400;300" rel="stylesheet" type="text/css">
+	<!-- Load JavaScript -->
 	<script src="http://www.google.com/jsapi"></script>
-    <!-- Load JQuery -->
+	<!-- Load JQuery -->
 	<script>
 		google.load("jquery", "1.4.1");
     </script>
-    
-    <!-- Include our scripts -->
+
+	<!-- Include our scripts -->
 	<script src="scripts/app.js"></script>
-   	<script src="scripts/user.js"></script>
-    <!-- Description and Keywords-->
-    <meta name="description" content="INSERT DESCRIPTION HERE">
-  	<meta name="keywords" content="INSERT KEYWORDS HERE">
-    <!-- Load header-->
+	<script src="scripts/user.js"></script>
+	<!-- Description and Keywords-->
+	<meta name="description" content="INSERT DESCRIPTION HERE">
+	<meta name="keywords" content="INSERT KEYWORDS HERE">
+	<!-- Load header-->
 	<script>
 		$(function(){
 			$(".header").load("header.html"); 
@@ -40,51 +40,84 @@
 	</script>
 	</head>
 
-    <body>
-    <header class="header"></header>
-	<main class="container">
-      <section class="content">  
-      <!-- Profile Info --> 
-        <div class="firstProfileArea">
-            <div class="profileImgContainer">
-            	<img src="images/yolanda.jpg">
-            </div>
-            <div class="profileInfo">
-            	<h2 class="username">Yolanda Reimer</h2>
-        		<p>Explorer Points:</p>
-        		<p class="explorerPoints">100,000</p>
-            </div>
-         </div>
-         <div class="secondProfileArea">    
-            <p class="userLevel">Level:&nbsp;10</p>
-            <div class="profileBtnContainer">
-                <a class="btn" onclick="checkCookie()">Edit&nbsp;Profile</a>
-                <a class="btn" href="interests.html">Interests</a>
-        	</div>
+	<body>
+<header class="header"></header>
+<main class="container">
+      <section class="content"> 
+    <!-- Profile Info -->
+    <div class="firstProfileArea">
+          <div class="profileImgContainer"> <img src="images/profile.jpg"> </div>
+          <div class="profileInfo">
+        <h2 class="username">John Doe</h2>
+        <p>Explorer Points:</p>
+        <p class="explorerPoints">100,000</p>
+      </div>
         </div>
-      
+    <div class="secondProfileArea">
+          <p class="userLevel">Level:&nbsp;10</p>
+          <div class="profileBtnContainer"> <a class="btn" onclick="checkCookie()">Edit&nbsp;Profile</a> <a class="btn" href="interests.html">Interests</a> </div>
+        </div>
     
-        <!-- Tabbed space for History and captures-->
-        <ul class="tabs">
-            <li>
-                <input type="radio" checked name="tabs" id="tab1">
-                <label for="tab1">Achievements</label>
-                <div id="tab-content1" class="tab-content animated fadeIn">
-                This is where you can see all your recent achievements, locations, and events. As more things are added, this list will get longer and will allow scrolling/swiping
-                </div>
-            </li>
-            <li>
-                <input type="radio" name="tabs" id="tab2">
-                <label for="tab2">Recent Images</label>
-                <div id="tab-content2" class="tab-content animated fadeIn">
-                This is where you can see all of the images you've captured with this app. As more things are added, this list will get longer and will allow scrolling/swiping
-                </div>
-            </li>
+    <!-- Tabbed space for History and captures-->
+    <ul class="tabs">
+          <li>
+        <input type="radio" checked name="tabs" id="tab1">
+        <label for="tab1">
+        <h2>Achievements</h2>
+        </label>
+        <div id="tab-content1" class="tab-content animated fadeIn">
+              <div class="tab-scroll">
+            <ul class="recent-achievements">
+                  <li> <img src="images/magnifying-glass.jpg">
+                <div class="achievement-details">
+                      <h3>Journeyman Explorer</h3>
+                      <p>Collected 10 Locations</p>
+                      <p class="points">300 points</p>
+                    </div>
+              </li>
+                  <li> <img src="images/camera-icon.jpg">
+                <div class="achievement-details">
+                      <h3>Novice Event Planner</h3>
+                      <p>Created your first event</p>
+                      <p class="points">100 points</p>
+                    </div>
+              </li>
+                  <li> <img src="images/magnifying-glass.jpg">
+                <div class="achievement-details">
+                      <h3>Apprentice Explorer</h3>
+                      <p>Collected your first location</p>
+                      <p class="points">200 points</p>
+                    </div>
+              </li>
+                  <li> <img src="images/camera-icon.jpg">
+                <div class="achievement-details">
+                      <h3>Novice Photographer</h3>
+                      <p>Shared your first image</p>
+                      <p class="points">100 points</p>
+                    </div>
+              </li>
+                </ul>
+          </div>
+            </div>
+      </li>
+          <li>
+        <input type="radio" name="tabs" id="tab2">
+        <label for="tab2">
+        <h2>Recent Images</h2>
+        </label>
+        <div id="tab-content2" class="tab-content animated fadeIn">
+              <div class="tab-scroll">
+            <ul class="recentPics">
+                  <li class="pictureFrame"> <img src="images/bar-1.jpg"> </li>
+                  <li class="pictureFrame"> <img src="images/bar-2.jpg"> </li>
+                  <li class="pictureFrame"> <img src="images/camera-icon.png"> </li>
+                  <li class="pictureFrame"> <img src="images/camera-icon.png"> </li>
+                </ul>
+          </div>
+            </div>
+      </li>
         </ul>
-      
-      </section>
-
-     </main>
-
+  </section>
+    </main>
 </body>
 </html>
