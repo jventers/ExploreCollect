@@ -7,12 +7,13 @@ var searchResults;
 var flag = true;
 var stops = [];
 var num_stops = 0;
-
+var searchQuery = "";
 
 
 
 function initMap(coords, searchParam,numDest) {
     num_stops = numDest;
+    searchQuery = searchParam;
     flag = true;
     var myLocation = coords;
 
@@ -35,6 +36,8 @@ function processResults(results, status) {
 
         searchResults = results;
 
+        localStorage.setItem(searchQuery, results);
+
         var resultList = document.getElementById('resultsList');
 //        var usedIndexes = [];
 
@@ -52,6 +55,7 @@ function processResults(results, status) {
         for (var j = 0, stop; stop = results[j]; j++) {
 
             //console.log(stop);
+
             var node = document.createElement("h4");
             node.className = "location";
             var myLink = "location-detail.html?User_Id=" + stop.place_id;

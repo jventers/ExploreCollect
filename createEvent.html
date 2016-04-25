@@ -55,8 +55,8 @@
     <section class="content"> 
       <form>
       
-      <h3>Start Time:</h3><input type="text" id="time" data-format="HH:mm" data-template="HH : mm" name="starttime"><br>
-      <h3>End Time:</h3><input type="text" id="time" data-format="HH:mm" data-template="HH : mm" name="endtime"><br>
+      <h3>Start Time:</h3><input type="text" id="starttime" data-format="HH:mm" data-template="HH : mm" name="starttime"><br>
+      <h3>End Time:</h3><input type="text" id="endtime" data-format="HH:mm" data-template="HH : mm" name="endtime"><br>
       <script>
         $('input').combodate({
           minuteStep: 15
@@ -69,10 +69,10 @@
       <input type="text" class="eventname"><br>
       <h3>Description:</h3><br>
       <input type="text" class="eventdesc"><br>
-      <label for="locationTextField">Location:</label>
-        <input id="locationTextField" type="text"><br>
+      <h3>Location:</h3>
+      <input id="locationTextField" type="text"><br>
       <h3>Attach Image:</h3><br>
-      <input type="file" name="pic" accept="image/*">
+      <input type="file" name="pic" accept="image/*" id="imageupload">
       <input type="submit" value="Upload"><br>
       
       <form>
@@ -140,5 +140,6 @@
      </div>   
      </form>
      <input type="submit" onclick="createEvent()" class="btn" value="Create Event">
+     <input type="submit" onclick="inviteFriends()" class="btn" value="Invite Friends">
 </body>
 </html>

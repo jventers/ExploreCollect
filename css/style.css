@@ -323,13 +323,14 @@ input[type="checkbox"]:checked + label:before {
   font-weight: 900;
 }
 /*------------------Input Boxes------------------*/
-input[type=text]{
+input[type=text], textarea, select.hour, select.minute{
 	background-color: #000;
 	color: #fff;
 	padding: .5rem;
 	margin-bottom: 1rem;
 	border: 2px solid #aaa;
 	font-size: 1rem;
+	font-family: 'Open Sans', Verdana, sans-serif;
 }
 /*------------------Thumbs Up/Down Radio Buttons------------------*/
 
@@ -516,13 +517,13 @@ div.expandCollapse {
 	float: right;
 }
 
-#allPics {
+.allPics {
 	margin-right: -999rem;
 	display: inline-block;
 	height: 250px;
 	padding: 0px;
 }
-#allPics li{
+.allPics li{
 	width: 250px;
 	height: 250px;
 	float: left;
@@ -755,7 +756,7 @@ select.dropDown {
 	padding: .5rem;
 	background-color: #000;
 	color: #fff;
-	font-family: FontAwesome, 'Open Sans', Verdana, sans-serif;
+	font-family: 'Open Sans', Verdana, sans-serif;
 	-moz-appearance:menulist; /* Firefox */
 	-webkit-appearance:menulist; /* Safari and Chrome */
 	appearance:menulist;
@@ -787,26 +788,25 @@ p.event-distance {
 	margin: 0px;
 }
 .form-heading {
-	margin-bottom: 0px;
+	margin-bottom: 5px;
+	margin-top: 10px;
 }
 
-<<<<<<< HEAD
+
 /*-----------------CreateEvent------------------*/
-
+.time-selector {
+	font-size: 1em;	
+	padding: .5rem;
+	background-color: #000;
+	color: #fff;
+	font-family: 'Open Sans', Verdana, sans-serif;
+}
 .eventname {
-	width:100%;
-}
-.eventdesc {
-	width:100%;
-	height:5rem;
-}
-.eventloc {
 	width:100%;
 }
 #tagList {
 	border: 2px solid #aaa;
-	min-height: 5vh;
-	max-height: 20vh;
+	height: 10rem;
 	margin-bottom: 10px;
 	overflow-y: scroll;
 }
@@ -818,9 +818,6 @@ p.event-distance {
 	margin: 0;
 	list-style: none;
 }
-
-=======
->>>>>>> dd856bb3e5a9726210c69109f97a5f6147dd6fd6
 
 /*------------------DatePicker------------------*/
 .ui-datepicker {

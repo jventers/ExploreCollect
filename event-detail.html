@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+	<head>
+	<!-- DO NOT REMOVE. THIS DEFINES THE CHARACTER SET-->
+	<meta charset="utf-8">
+	<!-- Backwards compatibility for IE. This display the page in edge mode: the highest mode supported by IE 6 - 11 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- Set the width of the page to the screen-width of the device -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Page title-->
+	<title>Individual Location</title>
+	<!-- Link to styles here -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- Link to font-awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	<!-- Link to Open Sans font -->
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:600;400;300" rel="stylesheet" type="text/css">
+	<!-- Load JavaScript -->
+	<script src="http://www.google.com/jsapi"></script>
+	<!-- Load JQuery -->
+	<script>
+		google.load("jquery", "1.4.1");
+    </script>
+	<!-- Load Google Maps API -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaWY5QH4ObetGu6TxKARoUpxWggHtJoiE"></script>
+	<!-- Include our scripts -->
+	<script src="scripts/app.js"></script>
+    <script src="scripts/google.js"></script>
+    <script src="scripts/location.js"></script>
+	<!-- Description and Keywords-->
+	<meta name="description" content="INSERT DESCRIPTION HERE">
+	<meta name="keywords" content="INSERT KEYWORDS HERE">
+	<!-- Load header-->
+	<script>
+		$(function(){
+			$(".header").load("header.html"); 
+		});
+	</script>
+	</head>
+
+	<body>
+        <header class="header"> </header>
+        
+        <main class="container"> 
+            <!-- Insert main content here -->
+            <section class="content">
+            <a href="index.html" id="backBtn"> <i class="fa fa-caret-left fa-lg"></i>  Back</a>
+               <div class="mapTextContainer">
+               		<p class="mapText">Select the map to begin navigation</p>
+               </div>
+               <div id="googleMap"></div>
+               <div id="ratingsAndButtons">
+                   <form id="ratingHands">
+					<input type="radio" name="rating" id="like" value="like"><label for="like"><span class="thumbsUp"></span>1200</label>
+                    <input type="radio" name="rating" id="dislike" value="dislike"><label for="dislike"><span  class="thumbsDown"></span>100</label>
+                   </form>
+                   <div id="addButtons">
+					<a href="#" class="btn">Add Event</a>
+					<a href="#" class="btn">Add to Trip</a>
+                   </div>
+               </div>
+               <div class="sliderNav"><i class="fa fa-chevron-left fa-2x prevPic"></i> <i class="fa fa-chevron-right fa-2x nextPic"></i></div>
+               <div id="slideshow">
+                   <ul class="allPics">
+                       <li class="pictureFrame">
+                           <img src="images/bar-1.jpg">
+                       </li>
+                       <li class="pictureFrame">
+                           <img src="images/bar-2.jpg">
+                       </li>
+                       <li class="pictureFrame">
+                           <img src="images/camera-icon.png">
+                       </li>
+                       <li class="pictureFrame">
+                           <img src="images/camera-icon.png">
+                       </li>
+                   </ul>
+               </div>
+            </section>
+        </main>
+    </body>
+</html>
