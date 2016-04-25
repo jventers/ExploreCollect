@@ -54,9 +54,6 @@
   <main class="container">
     <section class="content"> 
       <form>
-      
-      <h3>Start Time:</h3><input type="text" id="starttime" data-format="HH:mm" data-template="HH : mm" name="starttime"><br>
-      <h3>End Time:</h3><input type="text" id="endtime" data-format="HH:mm" data-template="HH : mm" name="endtime"><br>
 
       <h2 class="form-heading" maxlength="40">Event Name:</h2>
       <input type="text" class="eventname">
@@ -72,25 +69,12 @@
           minuteStep: 15
         });
         
-        </script>
-
-        <h3>Event Date:</h3><br>
-      <input id="start_date" type="text" class="firstDate"><br>
-      <h3>Event Name:</h3><br>
-      <input type="text" class="eventname"><br>
-      <h3>Description:</h3><br>
-      <input type="text" class="eventdesc"><br>
-      <h3>Location:</h3>
-      <input id="locationTextField" type="text"><br>
-      <h3>Attach Image:</h3><br>
-      <input type="file" name="pic" accept="image/*" id="imageupload">
-      <input type="submit" value="Upload"><br>
-      
+        </script>      
       
       <h2 class="form-heading">Description:</h2>
       <textarea rows="7" cols="40" maxlength="400"></textarea>
       <h2 class="form-heading">Location:</h2>
-        <input id="locationTextField" type="text">
+        <input id="locationTextField" type="text" value="The Montana Club Restaurant">
       <h2 class="form-heading">Attach Image:</h2>
       <input type="file" name="pic" accept="image/*">
       
@@ -156,7 +140,7 @@
     
      
      
-     <input type="submit" onclick="createEvent()" class="btn" value="Create Event">
+     <input type="submit" onclick="createEvent()" formaction="Events.html" class="btn" value="Create Event">
 
      <input type="submit" onclick="inviteFriends()" class="btn" value="Invite Friends">
 
