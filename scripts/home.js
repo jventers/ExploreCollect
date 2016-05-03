@@ -1,4 +1,6 @@
 // JavaScript Document
+var expandBool = true;
+
 var main = function() {
 
     /*-------------Progress Bar-------------*/
@@ -22,7 +24,7 @@ var main = function() {
     });
 
     /*-------------Toggle Hide/Show-------------*/
-var expandBool = true;
+//var expandBool = true;
     $('.expandCollapse').click(function() {
         $(this).next().slideToggle(500);
 		if (expandBool) {
