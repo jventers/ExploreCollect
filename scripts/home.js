@@ -27,8 +27,9 @@ var main = function() {
 //var expandBool = true;
     $('.expandCollapse').click(function() {
         $(this).next().slideToggle(500);
-		if (expandBool) {
-		// Rotate arrow clockwise
+		if (this.getAttribute("data-clicked") == "true") {
+
+            // Rotate arrow clockwise
             $(this).prev().animate({
                 borderSpacing: 90
             }, {
@@ -39,7 +40,9 @@ var main = function() {
                 },
                 duration: 250
             }, 'linear');
-			expandBool = false;
+
+            this.setAttribute("data-clicked","false");
+			//expandBool = false;
 		} // End if 
 		// The second time the category is selected
         else {
@@ -54,7 +57,8 @@ var main = function() {
                 },
                 duration: 250
             }, 'linear');
-            expandBool = true;
+            this.setAttribute("data-clicked","true");
+            //expandBool = true;
         } // end else
     });
 
