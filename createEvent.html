@@ -54,14 +54,11 @@
   <main class="container">
     <section class="content"> 
       <form>
-      
-      <h3>Start Time:</h3><input type="text" id="starttime" data-format="HH:mm" data-template="HH : mm" name="starttime"><br>
-      <h3>End Time:</h3><input type="text" id="endtime" data-format="HH:mm" data-template="HH : mm" name="endtime"><br>
 
       <h2 class="form-heading" maxlength="40">Event Name:</h2>
-      <input type="text" class="eventname">
+      <input type="text" id="eventname" class="eventname">
       <h2 class="form-heading">Event Date:</h2>
-      <input id="start_date" type="text" class="firstDate">
+      <input id="start_date" id="eventdate" type="text" class="firstDate">
       <h2 class="form-heading">Start Time:</h2>
       <input type="text" class="time-selector" id="starttime" data-format="HH:mm" data-template="HH : mm" name="starttime">
       <h2 class="form-heading">End Time:</h2>
@@ -73,18 +70,6 @@
         });
         
         </script>
-
-        <h3>Event Date:</h3><br>
-      <input id="start_date" type="text" class="firstDate"><br>
-      <h3>Event Name:</h3><br>
-      <input type="text" class="eventname"><br>
-      <h3>Description:</h3><br>
-      <input type="text" class="eventdesc"><br>
-      <h3>Location:</h3>
-      <input id="locationTextField" type="text"><br>
-      <h3>Attach Image:</h3><br>
-      <input type="file" name="pic" accept="image/*" id="imageupload">
-      <input type="submit" value="Upload"><br>
       
       
       <h2 class="form-heading">Description:</h2>
@@ -97,54 +82,21 @@
       <h2 class="form-heading">Tags relevant to your event:</h2>      
       
   <div id="tagList">
-    <h3>Entertainment & Sight-Seeing</h3>
   <ul>
-        <li><input type="checkbox" id="amusement_park" name="amusement_park_cb" unchecked><label for="amusement_park">Amusement Parks</label></li>
-        <li><input type="checkbox" id="aquarium" name="aquarium_cb" unchecked><label for="aquarium">Aquariums</label></li>
-        <li><input type="checkbox" id="beauty_salon" name="beauty_salon_cb" unchecked><label for="beauty_salon">Beauty Salons</label></li>
-        <li><input type="checkbox" id="bowling_alley" name="bowling_alley_cb" unchecked><label for="bowling_alley">Bowling Alleys</label></li>
-        <li><input type="checkbox" id="casino" name="casino_cb" unchecked><label for="casino">Casinos</label></li>
-        <li><input type="checkbox" id="church" name="church_cb" unchecked><label for="church">Churches</label></li>
-        <li><input type="checkbox" id="city_hall" name="city_hall_cb" unchecked><label for="city_hall">City Hall</label></li>
-        <li><input type="checkbox" id="courthouse" name="courthouse_cb" unchecked><label for="courthouse">Courthouses</label></li>
-        <!--<li><input type="checkbox"><label for="Landmarks</li> Not a "Places Type"-->
-        <li><input type="checkbox" id="library" name="library_cb" unchecked><label for="library">Libraries</label></li>
-        <li><input type="checkbox" id="local_government_office" name="local_government_office_cb" unchecked><label for="local_government_office">Local Government Offices</label></li>
-        <li><input type="checkbox" id="movie_theater" name="movie_theater_cb" unchecked><label for="movie_theater">Movie Theaters</label></li>
-        <li><input type="checkbox" id="museum" name="museum_cb" unchecked><label for="museum">Museums</label></li>
-        <li><input type="checkbox" id="night_club" name="night_club_cb" unchecked><label for="night_club">Night Clubs</label></li>
-        <li><input type="checkbox" id="park" name="park_cb" unchecked><label for="park">Parks</label></li>
-        <li><input type="checkbox" id="spa" name="spa_cb" unchecked><label for="spa">Spas</label></li>
-        <li><input type="checkbox" id="stadium" name="stadium_cb" unchecked><label for="stadium">Stadiums</label></li>
-        <li><input type="checkbox" id="university" name="university_cb" unchecked><label for="university">Universities</label></li>
-        <li><input type="checkbox" id="zoo" name="zoo_cb" unchecked><label for="zoo">Zoos</label></li>
-    </ul>
-<h3>Food & Drink</h3>
-    <ul>
-        <li><input type="checkbox" id="bakery" name="bakery_cb" unchecked><label for="bakery">Bakeries</label></li>
-        <li><input type="checkbox" id="bar" name="bar_cb" unchecked><label for="bar">Bars</label></li>
-        <!--<li><input type="checkbox"><label for="Breweries</li> Not a "Places Type"-->
-        <li><input type="checkbox" id="cafe" name="cafe_cb" unchecked><label for="cafe">Cafes</label></li>
-        <!--<li><input type="checkbox"><label for="Distilleries</li> Not a "Places Type"-->
-        <li><input type="checkbox" id="restaurant" name="restaurant_cb" unchecked><label for="restaurant">Restaurants</label></li>
-    </ul>
-<h3>Shopping</h3>
-  <ul>
-        <li><input type="checkbox" id="art_gallery" name="art_gallery_cb" unchecked><label for="art_gallery">Art Galleries</label></li>
-        <li><input type="checkbox" id="bicycle_store" name="bicycle_store_cb" unchecked><label for="bicycle_store">Bicycle Shops</label></li>
-        <li><input type="checkbox" id="book_store" name="book_store_cb" unchecked><label for="book_store">Book Stores</label></li>
-        <li><input type="checkbox" id="clothing_store" name="clothing_store_cb" unchecked><label for="clothing_store">Clothing Stores</label></li>
-        <li><input type="checkbox" id="convenience_store" name="convenience_store_cb" unchecked><label for="convenience_store">Convenience Stores</label></li>
-        <li><input type="checkbox" id="department_store" name="department_store_cb" unchecked><label for="department_store">Department Stores</label></li>
-        <li><input type="checkbox" id="electronics_store" name="electronics_store_cb" unchecked><label for="electronics_store">Electronics Stores</label></li>
-        <li><input type="checkbox" id="florist" name="florist_cb" unchecked><label for="florist">Florists</label></li>
-        <li><input type="checkbox" id="furniture_store" name="furniture_store_cb" unchecked><label for="furniture_store">Furniture Stores</label></li>
-        <li><input type="checkbox" id="jewelry_store" name="jewelry_store_cb" unchecked><label for="jewelry_store">Jewelry Stores</label></li>
-        <li><input type="checkbox" id="liquor_store" name="liquor_store_cb" unchecked><label for="liquor_store">Liquor Stores</label></li>
-        <li><input type="checkbox" id="movie_rental" name="movie_rental_cb" unchecked><label for="movie_rental">Movie Rentals</label></li>
+        <li><input type="checkbox" id="indoor_tag" name="indoor_tag" unchecked><label for="indoor_tag">Indoor</label></li>
+        <li><input type="checkbox" id="outdoor_tag" name="outdoor_tag" unchecked><label for="outdoor_tag">Outdoor</label></li>
+        <li><input type="checkbox" id="recreation_tag" name="recreation_tag" unchecked><label for="recreation_tag">Recreation</label></li>
+        <li><input type="checkbox" id="food_tag" name="food_tag" unchecked><label for="food_tag">Food</label></li>
+        <li><input type="checkbox" id="dog_tag" name="dog_tag" unchecked><label for="dog_tag">Dog Friendly</label></li>
+        <li><input type="checkbox" id="free_tag" name="free_tag" unchecked><label for="free_tag">Free</label></li>
+        <li><input type="checkbox" id="paid_tag" name="paid_tag" unchecked><label for="paid_tag">Paid</label></li>
+        <li><input type="checkbox" id="videogame_tag" name="videogame_tag" unchecked><label for="videogame_tag">Video Gaming</label></li>
+        <li><input type="checkbox" id="movie_tag" name="movie_tag" unchecked><label for="movie_tag">Movie</label></li>
+        
+        <li><input type="checkbox" id="allages_tag" name="allages_tag" unchecked><label for="allages_tag">All Ages</label></li>
+        <li><input type="checkbox" id="age18_tag" name="age18_tag" unchecked><label for="age18_tag">Ages 18+</label></li>
+        <li><input type="checkbox" id="age21_tag" name="age21_tag" unchecked><label for="age21_tag">Ages 21+</label></li>
         <li><input type="checkbox" id="pet_store" name="pet_store_cb" unchecked><label for="pet_store">Pet Stores</label></li>
-        <li><input type="checkbox" id="shoe_store" name="shoe_store_cb" unchecked><label for="shoe_store">Shoe Stores</label></li>
-        <li><input type="checkbox" id="shopping_mall" name="shopping_mall_cb" unchecked><label for="shopping_mall">Shopping Malls</label></li>
     </ul>
   </div>
     <div class="centered">
@@ -156,9 +108,8 @@
     
      
      
-     <input type="submit" onclick="createEvent()" class="btn" value="Create Event">
+     <a id="eventadd" onclick="addEvent()"type="submit" href="event-detail.html" class="btn" >Create Event</a>
 
-     <input type="submit" onclick="inviteFriends()" class="btn" value="Invite Friends">
 
      </div>  
      </form>

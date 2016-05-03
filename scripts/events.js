@@ -56,7 +56,45 @@ function addEvents() {
 $(document).on('click', '.toggle-btn', function() {
     $(this).toggleClass('toggle-btn-selected'); 
 });
+function saveEvent() {
+  
+   var ename = $('#eventname').val();
+  if($("#eventname").val() == '') {
+    $('#alert').html("<strong>Warning!</strong> You left the event name empty");
+    $('#alert').fadeIn().delay(1000).fadeOut();
+    return false;
+   }
+   localStorage.setItem('eventname',ename);
+   	
+   	var edate = $('#eventdate').val();
+   if($("#eventname").val() == '') {
+    $('#alert').html("<strong>Warning!</strong> You left the event date empty");
+    $('#alert').fadeIn().delay(1000).fadeOut();
+    return false;
+   }
+   localStorage.setItem('eventdate',edate);
 
+   	var stime = $('#starttime').val();
+   if($("#eventname").val() == '') {
+    $('#alert').html("<strong>Warning!</strong> You left the starttime empty");
+    $('#alert').fadeIn().delay(1000).fadeOut();
+    return false;
+   }
+   localStorage.setItem('starttime',stime);
+
+   alert(ename,edate,stime);
+   return false;
+});
+
+if(localStorage.getItem('todos')) {
+$('#todos').html(localStorage.getItem('todos'));
+}
+
+$('#clear').click( function() {
+window.localStorage.clear();
+location.reload();
+return false;
+});
 var myEventList = [];
 
 
