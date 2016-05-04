@@ -39,6 +39,7 @@
         name: "Styled Map"
     });
 
+   // var titleBar = document.getElementById("title");
     var mapCanvas = document.getElementById("googleMap");
     var mapOptions = {
         //center: destLatLong,
@@ -58,6 +59,9 @@
             if (status === google.maps.GeocoderStatus.OK) {
                 if (results[0]) {
 
+                    var locationText = results[0].formatted_address;
+
+                    setTitle(locationText);
                     map.setZoom(13);
                     map.setCenter(results[0].geometry.location);
                     /* Customize the Map Marker */
@@ -93,6 +97,14 @@
 
 
 } // End initMap
+
+function setTitle(locationText){
+
+    locationText = locationText.split(" ");
+    document.getElementById("title").innerHTML = locationText[0].replace(',','');
+    document.getElementById('pageTitle').innerHTML = locationText[0].replace(',','');
+
+}
 
 $(document).ready(function() {
     initMap();

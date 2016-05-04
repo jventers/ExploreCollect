@@ -1,4 +1,6 @@
 // JavaScript Document
+var expandBool = true;
+
 var main = function() {
 
     /*-------------Progress Bar-------------*/
@@ -22,11 +24,12 @@ var main = function() {
     });
 
     /*-------------Toggle Hide/Show-------------*/
-var expandBool = true;
+//var expandBool = true;
     $('.expandCollapse').click(function() {
         $(this).next().slideToggle(500);
-		if (expandBool) {
-		// Rotate arrow clockwise
+		if (this.getAttribute("data-clicked") == "true") {
+
+            // Rotate arrow clockwise
             $(this).prev().animate({
                 borderSpacing: 90
             }, {
@@ -37,7 +40,9 @@ var expandBool = true;
                 },
                 duration: 250
             }, 'linear');
-			expandBool = false;
+
+            this.setAttribute("data-clicked","false");
+			//expandBool = false;
 		} // End if 
 		// The second time the category is selected
         else {
@@ -52,7 +57,8 @@ var expandBool = true;
                 },
                 duration: 250
             }, 'linear');
-            expandBool = true;
+            this.setAttribute("data-clicked","true");
+            //expandBool = true;
         } // end else
     });
 
