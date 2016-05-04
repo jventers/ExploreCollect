@@ -39,34 +39,129 @@
 
         <script>
             var coords;
+            var terms = ['bar','park','library','concert','store','historical','restaurants'];
+            var currentCity = document.getElementById('current-city');
+
+
 
             function setLocation(){
+                currentCity = document.getElementById('current-city');
                 coords = getCoordinates();
+                setupCategories();
                 runQuery();
             }
+             function setupCategories(){
+                 terms.forEach(function(currentValue,index,arr){
+
+
+                     var arrow = document.createElement('i');
+                     arrow.className='fa fa-caret-right fa-lg';
+
+
+
+                     var expCollapse = document.createElement('div');
+                     expCollapse.className='expandCollapse';
+                     expCollapse.setAttribute("data-clicked","true");
+                     //expCollapse.style = 'padding-left: 20px; position: relative; margin-top: auto; margin-bottom: auto; float: left; line-height: 1.5rem; padding: 2px; font-weight: bold; width: 100%; cursor: pointer; border: 2px solid #aaa; border-radius: 30px;';
+                     expCollapse.addEventListener('click', function (event) {
+                         //alert('Hi!');
+                             $(this).next().slideToggle(500);
+                             if (this.getAttribute("data-clicked") == "true") {
+
+                                 // Rotate arrow clockwise
+                                 $(this).prev().animate({
+                                     borderSpacing: 90
+                                 }, {
+                                     step: function (now) {
+                                         $(this).css('-webkit-transform', 'rotate(' + now + 'deg)');
+                                         $(this).css('-moz-transform', 'rotate(' + now + 'deg)');
+                                         $(this).css('transform', 'rotate(' + now + 'deg)');
+                                     },
+                                     duration: 250
+                                 }, 'linear');
+
+                                 this.setAttribute("data-clicked", "false");
+
+                             } // End if
+                             // The second time the category is selected
+                             else {
+                                 // Rotate arrow back to center (counter-clockwise)
+                                 $(this).prev().animate({
+                                     borderSpacing: 0
+                                 }, {
+                                     step: function (now) {
+                                         $(this).css('-webkit-transform', 'rotate(' + now + 'deg)');
+                                         $(this).css('-moz-transform', 'rotate(' + now + 'deg)');
+                                         $(this).css('transform', 'rotate(' + now + 'deg)');
+                                     },
+                                     duration: 250
+                                 }, 'linear');
+                                 this.setAttribute("data-clicked", "true");
+
+                             } // end else
+
+                     });
+
+
+
+
+                     var myProgress = document.createElement('div');
+                     myProgress.className='myProgress';
+                     //myProgress.style = 'position: relative; width: 100%; height: 1.5rem; border-radius: 36px';
+
+                     var myBar = document.createElement('div');
+                     myBar.className='myBar';
+                     //myBar.style = 'width: 0px; height: 100%; background-color: #f38630; border-radius: 36px; display: inline-block';
+
+                     var heading = document.createElement('h3');
+                     heading.className='category';
+                     heading.innerHTML = currentValue;
+                     //heading.style = 'margin-top: auto; margin-bottom: auto; float: left; line-height: 1.5rem; padding-left: 20px; position: relative';
+
+                     var p = document.createElement('p');
+                     p.className='percentage';
+                     p.innerHTML = '0%';
+                     //p.style = 'margin-top: auto; margin-bottom: auto; float: left; line-height: 1.5rem; position: absolute; line-height: 1.5rem; color: white; padding-left: 88%; text-align: right;width: 50px';
+
+                     var items = document.createElement('div');
+                     items.className='showHide';
+                     items.id=currentValue;
+                    // items.style='display: block';
+
+
+                     myBar.appendChild(heading);
+                     myBar.appendChild(p);
+
+                     myProgress.appendChild(myBar);
+
+                     expCollapse.appendChild(myProgress);
+
+
+
+                     currentCity.appendChild(arrow);
+                     currentCity.appendChild(expCollapse);
+                     currentCity.appendChild(items);
+
+                   // reload();
+                 });
+
+
+             }
+
+
 
             function runQuery(){
-                var delay1=10; //1 second
-                var delay2=1000; //1 second
-                var delay3=2000; //1 second
+
+                var delay=1000; //1 second
 
 
-                setTimeout(function() {
-                    //your code to be executed after 1 second
-                    initMap(coords,'bar');
-                    console.log('bar');
-                }, delay1);
-                setTimeout(function() {
-                    //your code to be executed after 1 second
-                    initMap(coords,'park');
-                    console.log('park');
-                }, delay2);
-
-                setTimeout(function() {
-                    //your code to be executed after 1 second
-                    initMap(coords,'library');
-                    console.log('library');
-                }, delay3);
+                terms.forEach(function(currentValue,index,arr){
+                    setTimeout(function() {
+                        //your code to be executed after 1 second
+                        initMap(coords, currentValue);
+                        console.log(currentValue);
+                    }, delay*index);
+                });
 
             }
 
@@ -81,8 +176,9 @@
     
     <a href="#" id="editHome">Edit</a>
     
-        <div class="cities">
-            <i class="fa fa-caret-right fa-lg"></i><div data-clicked="true" class="expandCollapse">
+        <div id="cities-list" class="cities">
+            <i class="fa fa-caret-right fa-lg"></i>
+            <div data-clicked="true" class="expandCollapse">
                 <div class="myProgress">
                     <div class="myBar">
                         <h2 id="currentCity" class="city"></h2>
@@ -92,67 +188,67 @@
         	</div> <!-- End expandCollapse -->
         	<div class="showHide" id="current-city">
 
-                <i class="fa fa-caret-right fa-lg"></i>
-                <div data-clicked="true" class="expandCollapse">
-                    <div class="myProgress">
-                    	<div class="myBar">
-                            <h3 class="category">Bars</h3>
-                            <p class="percentage">0%</p>
-                        </div> <!-- End myBar -->
-                    </div> <!-- End myProgress -->
-                </div> <!-- End expandCollapse -->
+                <!--<i class="fa fa-caret-right fa-lg"></i>-->
+                <!--<div data-clicked="true" class="expandCollapse">-->
+                    <!--<div class="myProgress">-->
+                    	<!--<div class="myBar">-->
+                            <!--<h3 class="category">Test</h3>-->
+                            <!--<p class="percentage">0%</p>-->
+                        <!--</div> &lt;!&ndash; End myBar &ndash;&gt;-->
+                    <!--</div> &lt;!&ndash; End myProgress &ndash;&gt;-->
+                <!--</div> &lt;!&ndash; End expandCollapse &ndash;&gt;-->
 
-                <div id="bar" class="showHide">
-
-
-
-                
-                <!-- THIS IS AN EXAMPLE OF WHAT GETS LOADED HERE
-                <h4 class="location"><a href="location-detail.html">The Rhino</a></h4> -->
-           		
-                </div> <!-- End expandCollapse -->
-
-
-                <i class="fa fa-caret-right fa-lg"></i>
-                <div data-clicked="true" class="expandCollapse">
-                    <div class="myProgress">
-                        <div class="myBar">
-                            <h3 class="category">Library</h3>
-                            <p class="percentage">0%</p>
-                        </div> <!-- End myBar -->
-                    </div> <!-- End myProgress -->
-                </div> <!-- End expandCollapse -->
-
-                <div id="library" class="showHide">
+                <!--<div id="test" class="showHide">-->
 
 
 
 
-                    <!-- THIS IS AN EXAMPLE OF WHAT GETS LOADED HERE
-                    <h4 class="location"><a href="location-detail.html">The Rhino</a></h4> -->
+                <!--&lt;!&ndash; THIS IS AN EXAMPLE OF WHAT GETS LOADED HERE &ndash;&gt;-->
+                <!--<h4 class="location"><a href="location-detail.html">The Rhino</a></h4>-->
 
-                </div> <!-- End expandCollapse -->
-
-
-                <i class="fa fa-caret-right fa-lg"></i>
-                <div data-clicked="true" class="expandCollapse">
-                    <div class="myProgress">
-                        <div class="myBar">
-                            <h3 class="category">Parks</h3>
-                            <p class="percentage">0%</p>
-                        </div> <!-- End myBar -->
-                    </div> <!-- End myProgress -->
-                </div> <!-- End expandCollapse -->
-
-                <div id="park" class="showHide">
+                <!--</div> &lt;!&ndash; End expandCollapse &ndash;&gt;-->
 
 
+                <!--<i class="fa fa-caret-right fa-lg"></i>-->
+                <!--<div data-clicked="true" class="expandCollapse">-->
+                    <!--<div class="myProgress">-->
+                        <!--<div class="myBar">-->
+                            <!--<h3 class="category">Library</h3>-->
+                            <!--<p class="percentage">0%</p>-->
+                        <!--</div> &lt;!&ndash; End myBar &ndash;&gt;-->
+                    <!--</div> &lt;!&ndash; End myProgress &ndash;&gt;-->
+                <!--</div> &lt;!&ndash; End expandCollapse &ndash;&gt;-->
+
+                <!--<div id="library" class="showHide">-->
 
 
-                    <!-- THIS IS AN EXAMPLE OF WHAT GETS LOADED HERE
-                    <h4 class="location"><a href="location-detail.html">The Rhino</a></h4> -->
 
-                </div> <!-- End expandCollapse -->
+
+                    <!--&lt;!&ndash; THIS IS AN EXAMPLE OF WHAT GETS LOADED HERE-->
+                    <!--<h4 class="location"><a href="location-detail.html">The Rhino</a></h4> &ndash;&gt;-->
+
+                <!--</div> &lt;!&ndash; End expandCollapse &ndash;&gt;-->
+
+
+                <!--<i class="fa fa-caret-right fa-lg"></i>-->
+                <!--<div data-clicked="true" class="expandCollapse">-->
+                    <!--<div class="myProgress">-->
+                        <!--<div class="myBar">-->
+                            <!--<h3 class="category">Parks</h3>-->
+                            <!--<p class="percentage">0%</p>-->
+                        <!--</div> &lt;!&ndash; End myBar &ndash;&gt;-->
+                    <!--</div> &lt;!&ndash; End myProgress &ndash;&gt;-->
+                <!--</div> &lt;!&ndash; End expandCollapse &ndash;&gt;-->
+
+                <!--<div id="park" class="showHide">-->
+
+
+
+
+                    <!--&lt;!&ndash; THIS IS AN EXAMPLE OF WHAT GETS LOADED HERE-->
+                    <!--<h4 class="location"><a href="location-detail.html">The Rhino</a></h4> &ndash;&gt;-->
+
+                <!--</div> &lt;!&ndash; End expandCollapse &ndash;&gt;-->
 
 
 

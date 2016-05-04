@@ -1,5 +1,4 @@
 // JavaScript Document
-var expandBool = true;
 
 var main = function() {
 
@@ -24,7 +23,7 @@ var main = function() {
     });
 
     /*-------------Toggle Hide/Show-------------*/
-//var expandBool = true;
+
     $('.expandCollapse').click(function() {
         $(this).next().slideToggle(500);
 		if (this.getAttribute("data-clicked") == "true") {
@@ -42,8 +41,8 @@ var main = function() {
             }, 'linear');
 
             this.setAttribute("data-clicked","false");
-			//expandBool = false;
-		} // End if 
+
+		} // End if
 		// The second time the category is selected
         else {
             // Rotate arrow back to center (counter-clockwise)
@@ -58,7 +57,7 @@ var main = function() {
                 duration: 250
             }, 'linear');
             this.setAttribute("data-clicked","true");
-            //expandBool = true;
+
         } // end else
     });
 
@@ -78,4 +77,84 @@ var main = function() {
 */
 
 }; // End Main
+
+
+ function reload() {
+
+    /*-------------Progress Bar-------------*/
+    $('.progressUpdate').click(function() {
+        var $elem = $('.myBar');
+        var $percent = $('.percentage');
+        var width = 1;
+        var id = setInterval(frame, 10);
+
+        function frame() {
+            if (width >= 100) {
+                clearInterval(id);
+                $elem.css('backgroundColor', '#a9cf54');
+            } else {
+                $elem.css('backgroundColor', '#f38640');
+                width++;
+                $elem.css('width', width + '%');
+                $percent.html(width * 1 + '%');
+            }
+        }
+    });
+
+    /*-------------Toggle Hide/Show-------------*/
+
+    $('.expandCollapse').click(function() {
+        $(this).next().slideToggle(500);
+        if (this.getAttribute("data-clicked") == "true") {
+
+            // Rotate arrow clockwise
+            $(this).prev().animate({
+                borderSpacing: 90
+            }, {
+                step: function(now) {
+                    $(this).css('-webkit-transform', 'rotate(' + now + 'deg)');
+                    $(this).css('-moz-transform', 'rotate(' + now + 'deg)');
+                    $(this).css('transform', 'rotate(' + now + 'deg)');
+                },
+                duration: 250
+            }, 'linear');
+
+            this.setAttribute("data-clicked","false");
+
+        } // End if
+        // The second time the category is selected
+        else {
+            // Rotate arrow back to center (counter-clockwise)
+            $(this).prev().animate({
+                borderSpacing: 0
+            }, {
+                step: function(now) {
+                    $(this).css('-webkit-transform', 'rotate(' + now + 'deg)');
+                    $(this).css('-moz-transform', 'rotate(' + now + 'deg)');
+                    $(this).css('transform', 'rotate(' + now + 'deg)');
+                },
+                duration: 250
+            }, 'linear');
+            this.setAttribute("data-clicked","true");
+
+        } // end else
+    });
+
+    /*
+     var $cities = $('.city');
+     if ($cities.is(':empty')) {
+     $cities.css('display', 'none');
+     $cities.parent().css('display', 'none');
+     $cities.parent().parent().css('display', 'none');
+     $cities.parent().parent().parent().css('display', 'none');
+     } else {
+     $cities.css('display', 'inline-block');
+     $cities.parent().css('display', 'inline-block');
+     $cities.parent().parent().css('display', 'inline-block');
+     $cities.parent().parent().parent().css('display', 'inline-block');
+     }
+     */
+
+} // End Reload
+
 $(document).ready(main);
