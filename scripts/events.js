@@ -84,7 +84,7 @@ function saveEvent() {
 
    alert(ename,edate,stime);
    return false;
-});
+};
 
 if(localStorage.getItem('todos')) {
 $('#todos').html(localStorage.getItem('todos'));
