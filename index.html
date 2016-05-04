@@ -36,6 +36,41 @@
 			$(".header").load("header.html"); 
 		});
 	</script>
+
+        <script>
+            var coords;
+
+            function setLocation(){
+                coords = getCoordinates();
+                runQuery();
+            }
+
+            function runQuery(){
+                var delay1=10; //1 second
+                var delay2=1000; //1 second
+                var delay3=2000; //1 second
+
+
+                setTimeout(function() {
+                    //your code to be executed after 1 second
+                    initMap(coords,'bar');
+                    console.log('bar');
+                }, delay1);
+                setTimeout(function() {
+                    //your code to be executed after 1 second
+                    initMap(coords,'park');
+                    console.log('park');
+                }, delay2);
+
+                setTimeout(function() {
+                    //your code to be executed after 1 second
+                    initMap(coords,'library');
+                    console.log('library');
+                }, delay3);
+
+            }
+
+        </script>
     </head>
 
     <body>
@@ -55,8 +90,10 @@
                     </div> <!-- End myBar -->
             	</div> <!-- End myProgress -->
         	</div> <!-- End expandCollapse -->
-        	<div class="showHide">
-            	<i class="fa fa-caret-right fa-lg"></i><div data-clicked="true" class="expandCollapse">
+        	<div class="showHide" id="current-city">
+
+                <i class="fa fa-caret-right fa-lg"></i>
+                <div data-clicked="true" class="expandCollapse">
                     <div class="myProgress">
                     	<div class="myBar">
                             <h3 class="category">Bars</h3>
@@ -64,7 +101,8 @@
                         </div> <!-- End myBar -->
                     </div> <!-- End myProgress -->
                 </div> <!-- End expandCollapse -->
-                <div id="bars" class="showHide">
+
+                <div id="bar" class="showHide">
 
 
 
@@ -73,6 +111,51 @@
                 <h4 class="location"><a href="location-detail.html">The Rhino</a></h4> -->
            		
                 </div> <!-- End expandCollapse -->
+
+
+                <i class="fa fa-caret-right fa-lg"></i>
+                <div data-clicked="true" class="expandCollapse">
+                    <div class="myProgress">
+                        <div class="myBar">
+                            <h3 class="category">Library</h3>
+                            <p class="percentage">0%</p>
+                        </div> <!-- End myBar -->
+                    </div> <!-- End myProgress -->
+                </div> <!-- End expandCollapse -->
+
+                <div id="library" class="showHide">
+
+
+
+
+                    <!-- THIS IS AN EXAMPLE OF WHAT GETS LOADED HERE
+                    <h4 class="location"><a href="location-detail.html">The Rhino</a></h4> -->
+
+                </div> <!-- End expandCollapse -->
+
+
+                <i class="fa fa-caret-right fa-lg"></i>
+                <div data-clicked="true" class="expandCollapse">
+                    <div class="myProgress">
+                        <div class="myBar">
+                            <h3 class="category">Parks</h3>
+                            <p class="percentage">0%</p>
+                        </div> <!-- End myBar -->
+                    </div> <!-- End myProgress -->
+                </div> <!-- End expandCollapse -->
+
+                <div id="park" class="showHide">
+
+
+
+
+                    <!-- THIS IS AN EXAMPLE OF WHAT GETS LOADED HERE
+                    <h4 class="location"><a href="location-detail.html">The Rhino</a></h4> -->
+
+                </div> <!-- End expandCollapse -->
+
+
+
 
             </div> <!-- End showHide -->
         </div> <!-- End Cities -->
@@ -83,7 +166,7 @@
     
     <div id="addLocArea">
     <p id="locMsg">It doesn't look like you've added any cities to your list yet.</p>
-    <p><a class="currentLoc" onclick="initMap(getCoordinates(),'bar')">Add Current Location</a> or <a href="#">Search for a City</a></p>
+    <p><a class="currentLoc" onclick="setLocation()">Add Current Location</a> or <a href="#">Search for a City</a></p>
     <br></div>
     <div id="location"></div>
   
