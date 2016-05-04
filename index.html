@@ -39,13 +39,15 @@
 
         <script>
             var coords;
-            var terms = ['bar','park','library','concert','store','historical','restaurants'];
+            var terms = ['bar','park','library','music','store','museum','restaurants','university'];
             var currentCity = document.getElementById('current-city');
 
 
 
             function setLocation(){
                 currentCity = document.getElementById('current-city');
+                var msg = document.getElementById('locMsg');
+                msg.setAttribute('hidden','true');
                 coords = getCoordinates();
                 setupCategories();
                 runQuery();
@@ -209,48 +211,6 @@
                 <!--</div> &lt;!&ndash; End expandCollapse &ndash;&gt;-->
 
 
-                <!--<i class="fa fa-caret-right fa-lg"></i>-->
-                <!--<div data-clicked="true" class="expandCollapse">-->
-                    <!--<div class="myProgress">-->
-                        <!--<div class="myBar">-->
-                            <!--<h3 class="category">Library</h3>-->
-                            <!--<p class="percentage">0%</p>-->
-                        <!--</div> &lt;!&ndash; End myBar &ndash;&gt;-->
-                    <!--</div> &lt;!&ndash; End myProgress &ndash;&gt;-->
-                <!--</div> &lt;!&ndash; End expandCollapse &ndash;&gt;-->
-
-                <!--<div id="library" class="showHide">-->
-
-
-
-
-                    <!--&lt;!&ndash; THIS IS AN EXAMPLE OF WHAT GETS LOADED HERE-->
-                    <!--<h4 class="location"><a href="location-detail.html">The Rhino</a></h4> &ndash;&gt;-->
-
-                <!--</div> &lt;!&ndash; End expandCollapse &ndash;&gt;-->
-
-
-                <!--<i class="fa fa-caret-right fa-lg"></i>-->
-                <!--<div data-clicked="true" class="expandCollapse">-->
-                    <!--<div class="myProgress">-->
-                        <!--<div class="myBar">-->
-                            <!--<h3 class="category">Parks</h3>-->
-                            <!--<p class="percentage">0%</p>-->
-                        <!--</div> &lt;!&ndash; End myBar &ndash;&gt;-->
-                    <!--</div> &lt;!&ndash; End myProgress &ndash;&gt;-->
-                <!--</div> &lt;!&ndash; End expandCollapse &ndash;&gt;-->
-
-                <!--<div id="park" class="showHide">-->
-
-
-
-
-                    <!--&lt;!&ndash; THIS IS AN EXAMPLE OF WHAT GETS LOADED HERE-->
-                    <!--<h4 class="location"><a href="location-detail.html">The Rhino</a></h4> &ndash;&gt;-->
-
-                <!--</div> &lt;!&ndash; End expandCollapse &ndash;&gt;-->
-
-
 
 
             </div> <!-- End showHide -->
@@ -264,7 +224,7 @@
     <p id="locMsg">It doesn't look like you've added any cities to your list yet.</p>
     <p><a class="currentLoc" onclick="setLocation()">Add Current Location</a> or <a href="#">Search for a City</a></p>
     <br></div>
-    <div id="location"></div>
+    <div style="align-content: center" id="location"></div>
   
   </section>
     </main>
