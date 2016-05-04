@@ -39,10 +39,12 @@
 
         <script>
             var coords;
-            var terms = ['Bar','Park','Library','Music','Store','Museum','Restaurants','University'];
+            var terms = ['bar','park','library','music','store','museum','restaurants','university'];
             var currentCity = document.getElementById('current-city');
 
-
+            function capitalizeFirstLetter(string) {
+                return string.charAt(0).toUpperCase() + string.slice(1);
+            }
 
             function setLocation(){
                 currentCity = document.getElementById('current-city');
@@ -117,7 +119,7 @@
 
                      var heading = document.createElement('h3');
                      heading.className='category';
-                     heading.innerHTML = currentValue;
+                     heading.innerHTML = capitalizeFirstLetter(currentValue);
                      //heading.style = 'margin-top: auto; margin-bottom: auto; float: left; line-height: 1.5rem; padding-left: 20px; position: relative';
 
                      var p = document.createElement('p');
